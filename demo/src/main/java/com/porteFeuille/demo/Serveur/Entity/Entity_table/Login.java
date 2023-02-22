@@ -1,24 +1,29 @@
 package com.porteFeuille.demo.Serveur.Entity.Entity_table;
 
-import jakarta.persistence.Embeddable;
-import jakarta.persistence.Entity;
-import jakarta.persistence.Id;
-import jakarta.persistence.Table;
+import jakarta.persistence.*;
 
 @Entity
 @Table(name = "Login")
-public class Login {
+public class LoginFournisseur {
     @Id
     private String email;
 
     private String motDePasse;
+    @Transient
+    private String nouveauMotdePasse;
 
-    public Login() {
+    public LoginFournisseur() {
     }
 
-    public Login(String email, String motDePasse) {
+    public LoginFournisseur(String email, String motDePasse) {
         this.email = email;
         this.motDePasse = motDePasse;
+    }
+
+    public LoginFournisseur(String email, String motDePasse, String nouveauMotdePasse) {
+        this.email = email;
+        this.motDePasse = motDePasse;
+        this.nouveauMotdePasse = nouveauMotdePasse;
     }
 
     public String getEmail() {
@@ -37,6 +42,14 @@ public class Login {
         this.motDePasse = motDePasse;
     }
 
+    public String getNouveauMotdePasse() {
+        return nouveauMotdePasse;
+    }
+
+    public void setNouveauMotdePasse(String nouveauMotdePasse) {
+        this.nouveauMotdePasse = nouveauMotdePasse;
+    }
+
 
 
     public String encription(String motDePasse, int index){
@@ -50,13 +63,12 @@ public class Login {
                     s.append((char) ((letter + index - 97) % 26 + 97));
                 }
             } else {
-                System.out.println(motDePasse.charAt(i));
-                int c = Integer.parseInt(String.valueOf(motDePasse.charAt(i)))+1;//
-                System.out.println(c);
+                int c = Integer.parseInt(String.valueOf(letter))+index;
                 s.append(c);
 
             }
         }
+        System.out.println(s);
         return s.toString();
     }
 
@@ -72,10 +84,11 @@ public class Login {
                     s.append((char) ((letter - index - 97 + 26) % 26 + 97));
                 }
             } else {
-                s.append(motDePasse.charAt(i));
-
+                int c = Integer.parseInt(String.valueOf(letter))-index;
+                s.append(c);
             }
         }
+        System.out.println(s);
         return s.toString();
     }
 }
