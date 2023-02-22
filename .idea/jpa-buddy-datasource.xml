@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="JpbDataSourceConfig">
+    <data-sources>
+      <data-source id="5e83c226-c6da-4876-aad8-f4d2d73c1bc8" name="mysql-projet2022.alwaysdata.net " url="jdbc:mysql://mysql-projet2022.alwaysdata.net/mysql-projet2022.alwaysdata.net" driverClass="com.mysql.cj.jdbc.Driver" />
+      <data-source id="da4b53ae-33f8-4659-a8de-da0adfbcb15a" name="myBD" url="jdbc:mysql://localhost:8081/myBD" driverClass="com.mysql.cj.jdbc.Driver" />
+    </data-sources>
+  </component>
+</project>

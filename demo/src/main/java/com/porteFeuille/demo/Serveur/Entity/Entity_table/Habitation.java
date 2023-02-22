@@ -12,6 +12,9 @@ public class Habitation{
 
     private Long ean;
     private String adresse;
+
+    @Transient // besoin des classes du consommateur
+    private Consommateur consommateur_id;
     @Transient
     private Adresse siege;
 
@@ -60,5 +63,13 @@ public class Habitation{
 
     public void setSiege(Adresse siege) {
         this.siege = siege;
+    }
+
+    public Consommateur getConsommateur_id() {
+        return consommateur_id;
+    }
+
+    public void setConsommateur_id(Consommateur consommateur_id) {
+        this.consommateur_id = consommateur_id;
     }
 }

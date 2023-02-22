@@ -9,6 +9,7 @@ import org.springframework.lang.NonNull;
 import java.util.Optional;
 
 public interface HabitationRepositories extends JpaRepository<Habitation, Long>, JpaSpecificationExecutor<Habitation> {
-    @Query("select c from Habitation c where c.habitationId = ?1")
-    Optional<Habitation> findByHabitationId(@NonNull Long habitationId);
+    @Query("select h from Habitation h where h.habitationId = ?1")
+    Optional<Habitation> findByHabitationId(Long habitationId);
+
 }

@@ -22,6 +22,10 @@ public class PointFourniture {
     public PointFourniture() {
     }
 
+    public PointFourniture(Long ean) {
+        this.ean = ean;
+    }
+
     public Long getEan() {
         return ean;
     }

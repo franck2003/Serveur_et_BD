@@ -1,9 +1,10 @@
 package com.porteFeuille.demo.Serveur.Entity.Entity_table;
 
 import com.porteFeuille.demo.Serveur.Entity.Object.ConsommationId;
-import com.porteFeuille.demo.Serveur.Entity.Object.Date;
 import com.porteFeuille.demo.Serveur.Entity.Object.PointFournitureId;
 import jakarta.persistence.*;
+
+import java.util.Date;
 
 @Entity
 @IdClass(ConsommationId.class)
@@ -11,23 +12,23 @@ import jakarta.persistence.*;
 public class Consommation {
     @Id
     private Long ean ;// represente le compteur numerique
-    @Id //creer une clé secondaire pour une habitation
-    private Long habitation_id;
 
-    @Column(name = "date")
-    String dateDebut;
+    @Id
+   // @ManyToOne
+    //@JoinColumn(name = "habitation_id", referencedColumnName = "habitation_id")
+    private Long habitation_id;
     int valeur;
-    @Transient
+    @Temporal(TemporalType.DATE)
     Date date;
 
     public Consommation() {
     }
 
-    public Consommation(Long ean, Long habitation_id, String dateDebut, int valeur) {
+    public Consommation(Long ean, Long habitation_id, int valeur, Date date) {
         this.ean = ean;
         this.habitation_id = habitation_id;
-        this.dateDebut = dateDebut;
         this.valeur = valeur;
+        this.date = date;
     }
 
     public Long getEan() {

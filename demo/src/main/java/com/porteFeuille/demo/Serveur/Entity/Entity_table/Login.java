@@ -2,9 +2,16 @@ package com.porteFeuille.demo.Serveur.Entity.Entity_table;
 
 import jakarta.persistence.*;
 
+import javax.crypto.Cipher;
+import javax.crypto.KeyGenerator;
+import javax.crypto.NoSuchPaddingException;
+import javax.crypto.SecretKey;
+import java.security.MessageDigest;
+import java.security.NoSuchAlgorithmException;
+
 @Entity
 @Table(name = "Login")
-public class LoginFournisseur {
+public class Login {
     @Id
     private String email;
 
@@ -12,15 +19,15 @@ public class LoginFournisseur {
     @Transient
     private String nouveauMotdePasse;
 
-    public LoginFournisseur() {
+    public Login() {
     }
 
-    public LoginFournisseur(String email, String motDePasse) {
+    public Login(String email, String motDePasse) {
         this.email = email;
         this.motDePasse = motDePasse;
     }
 
-    public LoginFournisseur(String email, String motDePasse, String nouveauMotdePasse) {
+    public Login(String email, String motDePasse, String nouveauMotdePasse) {
         this.email = email;
         this.motDePasse = motDePasse;
         this.nouveauMotdePasse = nouveauMotdePasse;
@@ -49,46 +56,38 @@ public class LoginFournisseur {
     public void setNouveauMotdePasse(String nouveauMotdePasse) {
         this.nouveauMotdePasse = nouveauMotdePasse;
     }
-
-
-
-    public String encription(String motDePasse, int index){
-        StringBuilder s = new StringBuilder();
-        for (int i = 0; i < motDePasse.length(); i++) {
-            char letter = motDePasse.charAt(i);
-            if (Character.isLetter(letter)) {
-                if (Character.isUpperCase(letter)) {
-                    s.append((char) ((letter + index - 65) % 26 + 65));
-                } else {
-                    s.append((char) ((letter + index - 97) % 26 + 97));
-                }
-            } else {
-                int c = Integer.parseInt(String.valueOf(letter))+index;
-                s.append(c);
-
-            }
-        }
-        System.out.println(s);
-        return s.toString();
+    /*
+    public String encription(String motDePasse) throws Exception {
+        SecretKey secretKey = KeyGenerator.getInstance("AES").generateKey();
+        Cipher cipher = Cipher.getInstance("AES");
+        cipher.init(Cipher.ENCRYPT_MODE, secretKey);
+        byte[] encryp = cipher.doFinal(motDePasse.getBytes());
+        return new String(encryp);
     }
 
-
-    public String decription(String motDePasse, int index){
-        StringBuilder s = new StringBuilder();
-        for (int i = 0; i < motDePasse.length(); i++) {
-            char letter = motDePasse.charAt(i);
-            if (Character.isLetter(letter)) {
-                if (Character.isUpperCase(letter)) {
-                    s.append((char) ((letter - index - 65 + 26) % 26 + 65));
-                } else {
-                    s.append((char) ((letter - index - 97 + 26) % 26 + 97));
+    public String decription(String motDePasse) throws Exception{
+        SecretKey secretKey = KeyGenerator.getInstance("AES").generateKey();
+        Cipher cipher = Cipher.getInstance("AES");
+        cipher.init(Cipher.DECRYPT_MODE, secretKey);
+        byte[] decrypted = cipher.doFinal(motDePasse.getBytes());
+        return new String(decrypted);
+    }*/
+    public String hashString(String input) {
+        try {
+            MessageDigest messageDigest = MessageDigest.getInstance("MD5");
+            byte[] hash = messageDigest.digest(input.getBytes());
+            StringBuilder hexString = new StringBuilder();
+            for (byte b : hash) {
+                String hex = Integer.toHexString(0xff & b);
+                if (hex.length() == 1) {
+                    hexString.append('0');
                 }
-            } else {
-                int c = Integer.parseInt(String.valueOf(letter))-index;
-                s.append(c);
+                hexString.append(hex);
             }
+            return hexString.toString();
+        } catch (NoSuchAlgorithmException e) {
+            throw new RuntimeException(e);
         }
-        System.out.println(s);
-        return s.toString();
     }
 }
+

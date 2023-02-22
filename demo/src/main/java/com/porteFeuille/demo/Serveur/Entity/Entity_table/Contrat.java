@@ -1,9 +1,11 @@
 package com.porteFeuille.demo.Serveur.Entity.Entity_table;
-
-import com.porteFeuille.demo.Serveur.Entity.Object.Date;
 import jakarta.persistence.*;
 
 import java.io.Serializable;
+import java.util.Date;
+/*
+inserer une clé etrangère dans un contrat
+ */
 
 @Entity
 @Embeddable
@@ -11,48 +13,47 @@ import java.io.Serializable;
 public class Contrat implements Serializable {
     @Id
     private Long numero_contrat;
+    /*@ManyToOne
+    @JoinColumn(name = "client_id", referencedColumnName = "client_id")*/
     private Long client_id;
 
-    /*@ManyToOne(targetEntity = Fournisseur.class)
-    @JoinColumn(name = "nom_fournisseur")*/
-    private String nom_fournisseur;
 
-    private  Long ean;
+    @Column(nullable = false, name = "compteur", columnDefinition = "VARCHAR(50)")
+    private String compteur = "OUVERT";
 
-    private String debutContrat;
+    @ManyToOne
+    @JoinColumn(name = "fournisseur_id", referencedColumnName = "fournisseur_id")
+    private Fournisseur fournisseur_id;
 
-    private String finContrat;
-    @Transient
+    @ManyToOne
+    @JoinColumn(name = "ean", referencedColumnName = "ean")
+    private  PointFourniture ean;
+    @Temporal(TemporalType.DATE)
     private Date date_debut;
-   @Transient
+    @Temporal(TemporalType.DATE)
     private Date date_fin;
 
     public Contrat() {
     }
 
-    public Contrat(Long numero_contrat, Long client_id, String nom_fournisseur, Long ean, String debut_contrat, String fin_contrat) {
+    public Contrat(Long numero_contrat, Long client_id, Fournisseur fournisseur_id, PointFourniture ean, Date date_debut) {
         this.numero_contrat = numero_contrat;
         this.client_id = client_id;
-        this.nom_fournisseur = nom_fournisseur;
+        this.fournisseur_id = fournisseur_id;
         this.ean = ean;
-        this.debutContrat= debut_contrat;
-        this.finContrat = fin_contrat;
+        this.date_debut = date_debut;
     }
 
-    public String getDebutContrat() {
-        return debutContrat;
+    public Contrat(Long numero_contrat) {
+        this.numero_contrat = numero_contrat;
     }
 
-    public void setDebutContrat(String debutContrat) {
-        this.debutContrat = debutContrat;
+    public Fournisseur getFournisseur_id() {
+        return fournisseur_id;
     }
 
-    public String getFinContrat() {
-        return finContrat;
-    }
-
-    public void setFinContrat(String finContrat) {
-        this.finContrat = finContrat;
+    public void setFournisseur_id(Fournisseur fournisseur_id) {
+        this.fournisseur_id = fournisseur_id;
     }
 
     public Long getClient_id() {
@@ -71,11 +72,11 @@ public class Contrat implements Serializable {
         this.numero_contrat = numero_contrat;
     }
 
-    public Long getEan() {
+    public PointFourniture getEan() {
         return ean;
     }
 
-    public void setEan(Long ean) {
+    public void setEan(PointFourniture ean) {
         this.ean = ean;
     }
 
@@ -95,11 +96,11 @@ public class Contrat implements Serializable {
         this.date_fin = date_fin;
     }
 
-    public String getNom_fournisseur() {
-        return this.nom_fournisseur;
+    public String getCompteur() {
+        return compteur;
     }
 
-    public void setNom_fournisseur(String nom_fournisseur) {
-        this.nom_fournisseur = nom_fournisseur;
+    public void setCompteur(String compteur) {
+        this.compteur = compteur;
     }
 }

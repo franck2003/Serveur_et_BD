@@ -9,14 +9,23 @@ import org.springframework.boot.CommandLineRunner;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 
+import java.util.ArrayList;
+import java.util.List;
+
 @Configuration
 public class PointFournitureConfig {
 
     @Bean
     CommandLineRunner ajouterPointFourniture(PointFournitureRepositories repositories){
         return args ->{
-            PointFourniture p = new PointFourniture(946430795197304526L, "gaz");
-            repositories.save(p);
+            List<PointFourniture> list = new ArrayList<>();
+            PointFourniture gaz = new PointFourniture(946430795197304526L, "gaz");
+            PointFourniture eau = new PointFourniture(794929267075728442L, "eau");
+            PointFourniture electricite = new PointFourniture(803429457858963427L, "électricité");
+            list.add(gaz);
+            list.add(eau);
+            list.add(electricite);
+            repositories.saveAll(list);
         };
     }
 

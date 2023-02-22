@@ -1,54 +1,86 @@
 package com.porteFeuille.demo.Serveur.Config;
 
 import com.porteFeuille.demo.Serveur.Entity.Entity_table.Contrat;
-import com.porteFeuille.demo.Serveur.Entity.Object.Date;
+import com.porteFeuille.demo.Serveur.Entity.Entity_table.Fournisseur;
+import com.porteFeuille.demo.Serveur.Entity.Entity_table.PointFourniture;
+import com.porteFeuille.demo.Serveur.Entity.Object.Adresse;
 import com.porteFeuille.demo.Serveur.Repositories.ContratRepositories;
-import com.porteFeuille.demo.modèle.Student;
+import com.porteFeuille.demo.Serveur.Repositories.FournisseurRepositories;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 
-import javax.xml.crypto.Data;
+import java.util.ArrayList;
+import java.util.Calendar;
+import java.util.Date;
+import java.util.List;
+
 @Configuration
 public class ContratConfig {
+    @Autowired
+    ContratRepositories repositories;
 
     @Bean
-    CommandLineRunner ajouterContrat(ContratRepositories repositories){
+    CommandLineRunner ajouterContrat(){
         return args ->{
-            Date date_first = new Date(1,7,2003);
-            Date date_second = new Date(1,8,2006);
-            Contrat contrat = new Contrat(15L, 187L,"proximus" , 487L,date_first.toString(),date_second.toString());
+            List<Date> dates = generatesDates();
+            Fournisseur fournisseur = new Fournisseur(52L);
+            PointFourniture pointFourniture = new PointFourniture(946430795197304526L);
+            Contrat contrat = new Contrat(15L, 187L,fournisseur,pointFourniture,new Date());
             if (repositories.findByNumero_contrat(contrat.getNumero_contrat()).isEmpty()) {
                 repositories.save(contrat);
             }
         };
     }
 
-
     @Bean
-    CommandLineRunner suppimerContrat(ContratRepositories repositories){
+    CommandLineRunner suppimerContrat(){
         return args -> {
             if (repositories.findByNumero_contrat(102L).isPresent()) {
-                repositories.deleteByNumero_contrat(102L);
+               //repositories.deleteByNumero_contrat(102L);
             }
     };
 }
 
     @Bean
-    CommandLineRunner ChangerDateDebut(ContratRepositories repositories){
+    CommandLineRunner ChangerDateDebut(){
         return args -> {
             if (repositories.findByNumero_contrat(102L).isPresent()) {
-                //repositories.update;(ici je demanderai au prof)
+                repositories.updateDate_debutByNumero_contrat(new Date(), 102L);
             }
         };
     }
 
+    /*
     @Bean
-    CommandLineRunner ChangerDateFin(ContratRepositories repositories){
+    CommandLineRunner ChangerDateFin(){
         return args -> {
             if (repositories.findByNumero_contrat(102L).isPresent()) {
-                //repositories.update;(ici je demanderai au prof)
+                repositories.updateDate_finByNumero_contrat(new Date(), 102L);
             }
         };
+    }*/
+    @Bean
+    CommandLineRunner ouvrirCompteur(){
+        return args -> {
+            repositories.updateCompteurByClient_idAndEanAndFournisseur_idAndCompteur("OUVERT",187L,new PointFourniture(946430795197304526L), new Fournisseur(52L),"FERME");
+        };
+    }
+    @Bean
+    CommandLineRunner fermerCompteur(){
+        return args -> {
+           repositories.updateCompteurByClient_idAndEanAndFournisseur_idAndCompteur("FERME",187L,new PointFourniture(946430795197304526L), new Fournisseur(52L),"OUVERT");
+        };
+    }
+    public List<Date> generatesDates(){
+        List<Date> dates = new ArrayList<>();
+        dates.add(new Date());
+        Date dateFin = new Date();
+        Calendar calendar = Calendar.getInstance();
+        calendar.add(Calendar.YEAR, 1);
+        dateFin.setTime(calendar.getTimeInMillis());
+        dates.add(dateFin);
+        return dates;
     }
 }

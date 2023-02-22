@@ -12,6 +12,7 @@ import org.springframework.context.annotation.Configuration;
 
 @Configuration
 public class HabitationConfig {
+
     @Bean
     CommandLineRunner ajouterHabitation(HabitationRepositories repositories){
         return args ->{
@@ -22,4 +23,5 @@ public class HabitationConfig {
             }
         };
     }
+
 }
