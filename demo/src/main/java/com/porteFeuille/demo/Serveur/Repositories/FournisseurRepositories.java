@@ -12,6 +12,8 @@ import org.springframework.transaction.annotation.Transactional;
 import java.util.Optional;
 
 public interface FournisseurRepositories extends JpaRepository<Fournisseur, Long>, JpaSpecificationExecutor<Fournisseur> {
+    @Query("select f from Fournisseur f where f.email = ?1")
+    Fournisseur findByEmail(String email);
     @Transactional
     @Modifying
     @Query("delete from Fournisseur f where f.nom_fournisseur = ?1")

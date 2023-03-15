@@ -1,49 +1,78 @@
 package com.porteFeuille.demo.Serveur.Entity.Entity_table;
 
 import com.porteFeuille.demo.Serveur.Entity.Object.ConsommationId;
-import com.porteFeuille.demo.Serveur.Entity.Object.PointFournitureId;
 import jakarta.persistence.*;
 
 import java.util.Date;
+
 
 @Entity
 @IdClass(ConsommationId.class)
 @Table(name = "Consommation")
 public class Consommation {
     @Id
-    private Long ean ;// represente le compteur numerique
-
+    @ManyToOne(optional = false)
+    @JoinColumn(name = "point_fourniture_id", nullable = false)
+    private PointFourniture pointFournitureId;
     @Id
-   // @ManyToOne
-    //@JoinColumn(name = "habitation_id", referencedColumnName = "habitation_id")
-    private Long habitation_id;
+    @ManyToOne(optional = false)
+    @JoinColumn(name = "habitation_id", nullable = false)
+    private Habitation habitationId;
     int valeur;
     @Temporal(TemporalType.DATE)
     Date date;
 
+    public PointFourniture getPointFournitureId() {
+        return pointFournitureId;
+    }
+
+    public void setPointFournitureId(PointFourniture pointFournitureId) {
+        this.pointFournitureId = pointFournitureId;
+    }
+
+    public PointFourniture getPointFourniture() {
+        return pointFournitureId;
+    }
+
+    public void setPointFourniture(PointFourniture pointFournitureId) {
+        this.pointFournitureId = pointFournitureId;
+    }
+
+    public Habitation getHabitationId() {
+        return habitationId;
+    }
+
+    public void setHabitationId(Habitation habitationId) {
+        this.habitationId = habitationId;
+    }
+
+
+    public Consommation(long ean, long l, int valeur, Date date) {
+    }
+
     public Consommation() {
     }
 
-    public Consommation(Long ean, Long habitation_id, int valeur, Date date) {
-        this.ean = ean;
-        this.habitation_id = habitation_id;
+    public Consommation(PointFourniture pointFourniture, Habitation habitation_id, int valeur, Date date) {
+        this.pointFournitureId = pointFourniture;
+        this.habitationId = habitation_id;
         this.valeur = valeur;
         this.date = date;
     }
 
-    public Long getEan() {
-        return ean;
+    public int getValeur() {
+        return valeur;
     }
 
-    public void setEan(Long ean) {
-        this.ean = ean;
+    public Date getDate() {
+        return date;
     }
 
-    public Long getHabitation_id() {
-        return habitation_id;
+    public Habitation getHabitation_id() {
+        return habitationId;
     }
 
-    public void setHabitation_id(Long habitation_id) {
-        this.habitation_id = habitation_id;
+    public void setHabitation_id(Habitation habitation_id) {
+        this.habitationId = habitation_id;
     }
 }

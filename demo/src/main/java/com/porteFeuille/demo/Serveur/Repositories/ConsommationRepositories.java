@@ -11,6 +11,5 @@ import org.springframework.lang.NonNull;
 import java.util.Optional;
 
 public interface ConsommationRepositories  extends JpaRepository<Consommation, Long>, JpaSpecificationExecutor<Consommation> {
-    @Query("select c from Consommation c where c.habitation_id = ?1 and c.ean = ?2")
-    Optional<Consommation> findByHabitation_idAndEan(@NonNull Long habitation_id, Long ean);
+
 }

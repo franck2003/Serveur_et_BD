@@ -55,6 +55,7 @@ public class Login {
 
     public void setNouveauMotdePasse(String nouveauMotdePasse) {
         this.nouveauMotdePasse = nouveauMotdePasse;
+        this.motDePasse = nouveauMotdePasse;
     }
     /*
     public String encription(String motDePasse) throws Exception {

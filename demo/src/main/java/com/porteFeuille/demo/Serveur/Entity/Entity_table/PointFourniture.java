@@ -4,26 +4,47 @@ import com.porteFeuille.demo.Serveur.Entity.Object.PointFournitureId;
 import jakarta.persistence.*;
 
 @Entity
-@IdClass(PointFournitureId.class)
-@Table(name = "pointFournitures")
+@Table(name = "pointFourniture", uniqueConstraints = {
+        @UniqueConstraint(columnNames = {"ean", "pointFourniture"})})
 public class PointFourniture {
     @Id
+    @GeneratedValue(strategy = GenerationType.SEQUENCE)
+    private Long pointFournitureId;
     @Column(name = "ean")
     private Long ean;
-    @Id
     @Column(name = "pointFourniture")
-    private String fourniture;
+    private String Pointfourniture;
 
     public PointFourniture(Long ean, String nomfournisseur) {
         this.ean = ean;
-        this.fourniture = nomfournisseur;
+        this.Pointfourniture = nomfournisseur;
     }
 
     public PointFourniture() {
     }
 
-    public PointFourniture(Long ean) {
-        this.ean = ean;
+    public PointFourniture(Long pointFournitureId) {
+        this.pointFournitureId = pointFournitureId;
+    }
+
+    public PointFourniture(String fourniture) {
+        this.Pointfourniture = fourniture;
+    }
+
+    public Long getPointFournitureId() {
+        return pointFournitureId;
+    }
+
+    public void setPointFournitureId(Long pointFournitureId) {
+        this.pointFournitureId = pointFournitureId;
+    }
+
+    public String getPointfourniture() {
+        return Pointfourniture;
+    }
+
+    public void setPointfourniture(String pointfourniture) {
+        Pointfourniture = pointfourniture;
     }
 
     public Long getEan() {
@@ -35,10 +56,10 @@ public class PointFourniture {
     }
 
     public String getfournisseur() {
-        return fourniture;
+        return Pointfourniture;
     }
 
     public void setfournisseur(String nom_fournisseur) {
-        this.fourniture = nom_fournisseur;
+        this.Pointfourniture = nom_fournisseur;
     }
 }

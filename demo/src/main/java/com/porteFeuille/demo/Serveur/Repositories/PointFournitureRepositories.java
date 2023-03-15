@@ -10,6 +10,6 @@ import org.springframework.lang.NonNull;
 import java.util.Optional;
 
 public interface PointFournitureRepositories extends JpaRepository<PointFourniture, Long>, JpaSpecificationExecutor<PointFourniture> {
-    @Query("select p from PointFourniture p where p.fourniture = ?1")
+    @Query("select p from PointFourniture p where p.Pointfourniture = ?1")
     Optional<PointFourniture> findByNom_fournisseur(@NonNull String fourniture);
 }

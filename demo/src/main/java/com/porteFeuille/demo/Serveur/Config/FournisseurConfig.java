@@ -1,6 +1,7 @@
 package com.porteFeuille.demo.Serveur.Config;
 
 import com.porteFeuille.demo.Serveur.Entity.Entity_table.Fournisseur;
+import com.porteFeuille.demo.Serveur.Entity.Entity_table.PointFourniture;
 import com.porteFeuille.demo.Serveur.Entity.Object.Adresse;
 import com.porteFeuille.demo.Serveur.Repositories.ContratRepositories;
 import com.porteFeuille.demo.Serveur.Repositories.FournisseurRepositories;
@@ -8,6 +9,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
+import org.springframework.dao.DataIntegrityViolationException;
 
 import java.util.Optional;
 
@@ -21,9 +23,13 @@ public class FournisseurConfig {
     CommandLineRunner ajouterClient(){
         return args ->{
             Adresse s = new Adresse("DuFord",31,"null","Mons",7012);
-            Fournisseur fournisseur = new Fournisseur("lyca", s.toString(),"lyca@gmail.com");
-            if (repositories.findByNom_fournisseur (fournisseur.getNom_fournisseur()).isEmpty()){
+            PointFourniture pointFourniture = new PointFourniture(102L);
+            Long cout = 2L;
+            Fournisseur fournisseur = new Fournisseur("lampiris", pointFourniture, s.toString(),"lampiris@gmail.com",2L);
+            try {
                 repositories.save(fournisseur);
+            }catch (DataIntegrityViolationException e){
+                System.out.println("données existe dans la BD");
             }
         };
     }

@@ -1,5 +1,7 @@
-package com.porteFeuille.demo.modèle;
+package com.porteFeuille.demo.test_Api;
 
+import com.porteFeuille.demo.modèle.Student;
+import com.porteFeuille.demo.modèle.StudentRepositories;
 import org.springframework.context.annotation.Bean;
 
 import java.util.List;

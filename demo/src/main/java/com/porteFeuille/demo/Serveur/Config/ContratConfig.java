@@ -1,15 +1,15 @@
 package com.porteFeuille.demo.Serveur.Config;
 
-import com.porteFeuille.demo.Serveur.Entity.Entity_table.Contrat;
-import com.porteFeuille.demo.Serveur.Entity.Entity_table.Fournisseur;
-import com.porteFeuille.demo.Serveur.Entity.Entity_table.PointFourniture;
+import com.porteFeuille.demo.Serveur.Entity.Entity_table.*;
 import com.porteFeuille.demo.Serveur.Entity.Object.Adresse;
 import com.porteFeuille.demo.Serveur.Repositories.ContratRepositories;
 import com.porteFeuille.demo.Serveur.Repositories.FournisseurRepositories;
+import com.porteFeuille.demo.Serveur.Repositories.PointFournitureRepositories;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
+import org.springframework.dao.DataIntegrityViolationException;
 
 import java.util.ArrayList;
 import java.util.Calendar;
@@ -20,47 +20,33 @@ import java.util.List;
 public class ContratConfig {
     @Autowired
     ContratRepositories repositories;
-
     @Bean
-    CommandLineRunner ajouterContrat(){
+    CommandLineRunner ajouterContrat() {
         return args ->{
-            List<Date> dates = generatesDates();
-            Fournisseur fournisseur = new Fournisseur(52L);
-            PointFourniture pointFourniture = new PointFourniture(946430795197304526L);
-            Contrat contrat = new Contrat(15L, 187L,fournisseur,pointFourniture,new Date());
-            if (repositories.findByNumero_contrat(contrat.getNumero_contrat()).isEmpty()) {
+            Fournisseur fournisseur = new Fournisseur(2002L);
+            Consommateur consommateur = new Consommateur(2L);
+            PointFourniture pointFourniture = new PointFourniture( 102L);
+            Habitation habitation = new Habitation(1252L);
+            Contrat contrat = new Contrat(consommateur, "ouvert",fournisseur,habitation,pointFourniture,new Date());
+            try{
                 repositories.save(contrat);
+            }catch (DataIntegrityViolationException e){
+                System.out.println("violation de la contrainte clé unique ");
             }
+
         };
     }
-
     @Bean
-    CommandLineRunner suppimerContrat(){
+    CommandLineRunner femerCompteur(){
         return args -> {
-            if (repositories.findByNumero_contrat(102L).isPresent()) {
-               //repositories.deleteByNumero_contrat(102L);
-            }
-    };
-}
-
-    @Bean
-    CommandLineRunner ChangerDateDebut(){
-        return args -> {
-            if (repositories.findByNumero_contrat(102L).isPresent()) {
-                repositories.updateDate_debutByNumero_contrat(new Date(), 102L);
-            }
+                PointFourniture pointFourniture = new PointFourniture(102L);
+                Habitation habitation = new Habitation(1252L);
+               // repositories.updateCompteurByCompteurAndHabitationIdAndPointFournitureId("ferme","ouvert",habitation,pointFourniture);
+                System.out.println("bonjour");
+                System.out.println("bonjour");
         };
     }
-
-    /*
-    @Bean
-    CommandLineRunner ChangerDateFin(){
-        return args -> {
-            if (repositories.findByNumero_contrat(102L).isPresent()) {
-                repositories.updateDate_finByNumero_contrat(new Date(), 102L);
-            }
-        };
-    }*/
+/*
     @Bean
     CommandLineRunner ouvrirCompteur(){
         return args -> {
@@ -72,7 +58,7 @@ public class ContratConfig {
         return args -> {
            repositories.updateCompteurByClient_idAndEanAndFournisseur_idAndCompteur("FERME",187L,new PointFourniture(946430795197304526L), new Fournisseur(52L),"OUVERT");
         };
-    }
+    }*/
     public List<Date> generatesDates(){
         List<Date> dates = new ArrayList<>();
         dates.add(new Date());

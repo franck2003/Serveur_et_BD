@@ -4,33 +4,59 @@ import com.porteFeuille.demo.Serveur.Entity.Object.Adresse;
 import jakarta.persistence.*;
 
 @Entity
-@Table(name = "Habitation")
+@Table(name = "Habitation" , uniqueConstraints= {
+        @UniqueConstraint(columnNames = {"adresse", "pointFournitureId"})})
 public class Habitation{
 
     @Id
+    @GeneratedValue(strategy = GenerationType.AUTO)
+    @Column(name = "habitationId")
     private Long habitationId;
 
-    private Long ean;
+    @ManyToOne
+    @JoinColumn(name = "pointFournitureId")
+    private PointFourniture pointFournitureId;
+
     private String adresse;
 
-    @Transient // besoin des classes du consommateur
+    @ManyToOne
+    @JoinColumn(name = "consommateur_id")
     private Consommateur consommateur_id;
+
+    @ManyToOne
+    @JoinColumn(name = "fournisseur_id")
+    private Fournisseur fournisseurId;
     @Transient
     private Adresse siege;
+
+    public Fournisseur getFournisseurId() {
+        return fournisseurId;
+    }
+
+    public void setFournisseurId(Fournisseur fournisseurId) {
+        this.fournisseurId = fournisseurId;
+    }
+
+    public PointFourniture getPointFourniture() {
+        return pointFournitureId;
+    }
+
+    public void setPointFourniture(PointFourniture pointFourniture) {
+        this.pointFournitureId= pointFourniture;
+    }
 
     public Habitation() {
     }
 
-    public Habitation(Long habitationId, Long ean, int compteur, Adresse siege) {
-        this.habitationId = habitationId;
-        this.ean = ean;
-        this.siege = siege;
+    public Habitation(PointFourniture pointFourniture, String adresse, Consommateur consommateur_id, Fournisseur fournisseurId) {
+        this.pointFournitureId = pointFourniture;
+        this.adresse = adresse;
+        this.consommateur_id = consommateur_id;
+        this.fournisseurId = fournisseurId;
     }
 
-    public Habitation(Long habitationId, Long ean, String adresse) {
-        this.habitationId = habitationId;
-        this.adresse = adresse;
-        this.ean = ean;
+    public Habitation(Long l) {
+        this.habitationId = l;
     }
 
     public Long getHabitationId() {
@@ -49,14 +75,6 @@ public class Habitation{
         this.adresse = adresse;
     }
 
-    public Long getEan() {
-        return ean;
-    }
-
-    public void setEan(Long ean) {
-        this.ean = ean;
-    }
-
     public Adresse getSiege() {
         return siege;
     }
@@ -67,6 +85,17 @@ public class Habitation{
 
     public Consommateur getConsommateur_id() {
         return consommateur_id;
+    }
+
+    @Override
+    public String toString() {
+        return "Habitation{" +
+                "habitationId=" + habitationId +
+                ", ean=" + pointFournitureId +
+                ", adresse='" + adresse + '\'' +
+                ", consommateur_id=" + consommateur_id +
+                ", siege=" + siege +
+                '}';
     }
 
     public void setConsommateur_id(Consommateur consommateur_id) {

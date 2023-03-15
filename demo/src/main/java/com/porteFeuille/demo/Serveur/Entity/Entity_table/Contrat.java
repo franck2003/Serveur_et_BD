@@ -9,14 +9,15 @@ inserer une clé etrangère dans un contrat
 
 @Entity
 @Embeddable
-@Table(name = "Contrat")
+@Table(name = "Contrat", uniqueConstraints= {
+        @UniqueConstraint(columnNames = {"pointFournitureId", "compteur", "habitation_Id"})})
 public class Contrat implements Serializable {
     @Id
+    @GeneratedValue(strategy = GenerationType.AUTO)
     private Long numero_contrat;
-    /*@ManyToOne
-    @JoinColumn(name = "client_id", referencedColumnName = "client_id")*/
-    private Long client_id;
-
+    @ManyToOne
+    @JoinColumn(name = "consommateur_id")
+    private Consommateur consommateurId;
 
     @Column(nullable = false, name = "compteur", columnDefinition = "VARCHAR(50)")
     private String compteur = "OUVERT";
@@ -26,26 +27,53 @@ public class Contrat implements Serializable {
     private Fournisseur fournisseur_id;
 
     @ManyToOne
-    @JoinColumn(name = "ean", referencedColumnName = "ean")
-    private  PointFourniture ean;
+    @JoinColumn(name = "habitation_id")
+    private Habitation habitationId;
+
+    @ManyToOne
+    @JoinColumn(name = "pointFournitureId")
+    private PointFourniture pointFournitureId;
     @Temporal(TemporalType.DATE)
     private Date date_debut;
-    @Temporal(TemporalType.DATE)
-    private Date date_fin;
+
+    public PointFourniture getPointFournitureId() {
+        return pointFournitureId;
+    }
+
+    public void setPointFournitureId(PointFourniture pointFournitureId) {
+        this.pointFournitureId = pointFournitureId;
+    }
+
+    public Habitation getHabitation() {
+        return habitationId;
+    }
+
+    public void setHabitation(Habitation habitationId) {
+        this.habitationId = habitationId;
+    }
+
+    public Consommateur getConsommateurId() {
+        return consommateurId;
+    }
+
+    public void setConsommateurId(Consommateur consommateurId) {
+        this.consommateurId = consommateurId;
+    }
 
     public Contrat() {
     }
 
-    public Contrat(Long numero_contrat, Long client_id, Fournisseur fournisseur_id, PointFourniture ean, Date date_debut) {
-        this.numero_contrat = numero_contrat;
-        this.client_id = client_id;
-        this.fournisseur_id = fournisseur_id;
-        this.ean = ean;
-        this.date_debut = date_debut;
-    }
-
     public Contrat(Long numero_contrat) {
         this.numero_contrat = numero_contrat;
+    }
+
+    public Contrat(Consommateur consommateurId, String compteur, Fournisseur fournisseur_id, Habitation habitationId, PointFourniture pointFournitureId, Date date_debut) {
+        this.consommateurId = consommateurId;
+        this.compteur = compteur;
+        this.fournisseur_id = fournisseur_id;
+        this.habitationId = habitationId;
+        this.pointFournitureId = pointFournitureId;
+        this.date_debut = date_debut;
     }
 
     public Fournisseur getFournisseur_id() {
@@ -56,14 +84,6 @@ public class Contrat implements Serializable {
         this.fournisseur_id = fournisseur_id;
     }
 
-    public Long getClient_id() {
-        return client_id;
-    }
-
-    public void setClient_id(Long client_id) {
-        this.client_id = client_id;
-    }
-
     public Long getNumero_contrat() {
         return numero_contrat;
     }
@@ -72,28 +92,12 @@ public class Contrat implements Serializable {
         this.numero_contrat = numero_contrat;
     }
 
-    public PointFourniture getEan() {
-        return ean;
-    }
-
-    public void setEan(PointFourniture ean) {
-        this.ean = ean;
-    }
-
     public Date getDate_debut() {
         return date_debut;
     }
 
     public void setDate_debut(Date date_debut) {
         this.date_debut = date_debut;
-    }
-
-    public Date getDate_fin() {
-        return date_fin;
-    }
-
-    public void setDate_fin(Date date_fin) {
-        this.date_fin = date_fin;
     }
 
     public String getCompteur() {

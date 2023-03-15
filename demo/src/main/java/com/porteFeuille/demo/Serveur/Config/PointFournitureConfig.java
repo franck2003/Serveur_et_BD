@@ -8,13 +8,13 @@ import com.porteFeuille.demo.Serveur.Repositories.PointFournitureRepositories;
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
+import org.springframework.dao.DataIntegrityViolationException;
 
 import java.util.ArrayList;
 import java.util.List;
 
 @Configuration
 public class PointFournitureConfig {
-
     @Bean
     CommandLineRunner ajouterPointFourniture(PointFournitureRepositories repositories){
         return args ->{
@@ -25,7 +25,11 @@ public class PointFournitureConfig {
             list.add(gaz);
             list.add(eau);
             list.add(electricite);
-            repositories.saveAll(list);
+            try {
+                repositories.saveAll(list);
+            }catch (DataIntegrityViolationException e){
+                System.out.println("l'information que vous voulez ajouter dans la base de données est deja presente");
+            }
         };
     }
 

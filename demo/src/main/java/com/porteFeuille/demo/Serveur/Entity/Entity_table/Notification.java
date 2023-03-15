@@ -2,6 +2,10 @@ package com.porteFeuille.demo.Serveur.Entity.Entity_table;
 
 import jakarta.persistence.*;
 
+import org.apache.tomcat.util.json.JSONFilter;
+
+import java.util.Date;
+
 @Entity
 
 public class Notification {
@@ -14,13 +18,14 @@ public class Notification {
     @JoinColumn(name = "fournisseur_id", referencedColumnName = "fournisseur_id")
     private Fournisseur fournisseur_id;
 
-    /*@ManyToOne
-    @JoinColumn(name = "consommateur_id", referencedColumnName = "consommateur_id")
-    Consommateur consommateur_id;
+    @ManyToOne
+    @JoinColumn(name = "consommateurId", referencedColumnName = "consommateurId")
+    private Consommateur consommateurId;
 
-     */
+    @Temporal(TemporalType.DATE)
+    Date date;
     String status;
-
+    @Column(name = "json", columnDefinition = "json")
     String json;
 
     public Notification() {
@@ -28,6 +33,12 @@ public class Notification {
 
     public Notification(Fournisseur fournisseur_id, String status, String json) {
         this.fournisseur_id = fournisseur_id;
+        this.status = status;
+        this.json = json;
+    }
+    public Notification( Fournisseur fournisseur_id, Date date, String status, String json) {
+        this.fournisseur_id = fournisseur_id;
+        this.date = date;
         this.status = status;
         this.json = json;
     }

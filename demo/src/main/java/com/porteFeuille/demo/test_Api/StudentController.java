@@ -1,5 +1,7 @@
-package com.porteFeuille.demo.modèle;
+package com.porteFeuille.demo.test_Api;
 
+import com.porteFeuille.demo.modèle.Student;
+import com.porteFeuille.demo.modèle.StudentRepositories;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.ArrayList;

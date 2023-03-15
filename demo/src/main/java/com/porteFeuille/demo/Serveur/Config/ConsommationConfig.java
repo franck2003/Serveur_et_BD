@@ -1,11 +1,15 @@
 package com.porteFeuille.demo.Serveur.Config;
 
 import com.porteFeuille.demo.Serveur.Entity.Entity_table.Consommation;
+import com.porteFeuille.demo.Serveur.Entity.Entity_table.Habitation;
+import com.porteFeuille.demo.Serveur.Entity.Entity_table.PointFourniture;
+import com.porteFeuille.demo.Serveur.Repositories.ConsommateurRepositories;
 import com.porteFeuille.demo.Serveur.Repositories.ConsommationRepositories;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
+import org.springframework.dao.DataIntegrityViolationException;
 
 import java.util.Calendar;
 import java.util.Date;
@@ -15,19 +19,19 @@ import java.util.Date;
 public class ConsommationConfig{
     @Autowired
     ConsommationRepositories repositories;
+    @Autowired
+    ConsommateurRepositories consommateurRepositories;
 
     @Bean
     CommandLineRunner ajouterDonneesDeConsommation(){
         return args ->{
-            Date dateDebut = new Date();
-
-            Date dateFin = new Date();
-            Calendar calendar = Calendar.getInstance();
-            calendar.add(Calendar.YEAR, 1);
-            dateFin.setTime(calendar.getTimeInMillis());
-            Consommation c = new Consommation(165416154L, 16578415L, 0, new Date());
-            if (repositories.findByHabitation_idAndEan(c.getHabitation_id(), c.getEan()).isEmpty()) {
-                repositories.save(c);
+            Habitation habitation = new Habitation( 1252L);
+            PointFourniture pointFourniture = new PointFourniture(103L);
+            Consommation consommation = new Consommation(pointFourniture,habitation, 0, new Date());
+            try {
+                repositories.save(consommation);
+            }catch (DataIntegrityViolationException e){
+                System.out.println("valeur presente");
             }
         };
     }
