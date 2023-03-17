@@ -15,6 +15,8 @@ public class Consommateur  {
     private String Prenom;
     private String Nom;
     private String Email;
+
+    //ajouter un champs mot de passe et le supprimer dans la classe login
     public Consommateur() {
     }
 
