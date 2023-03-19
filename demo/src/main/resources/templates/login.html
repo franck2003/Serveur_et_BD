@@ -1,36 +1,40 @@
 <!DOCTYPE html>
-<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Login Page</title>
-    <link rel="stylesheet" href="style.css">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Se Connecter</title>
+    <link rel="stylesheet" href="Style2.css">
+    <link rel="shortcut icon" href="wallet-icon-png-5.png">
 </head>
+
 <body>
-<div class="login-container">
-    <form action="/bienvenu" method="POST">
-        <h2>Login</h2>
-        <form>
-            <label for="username">Nom d'utilisateur :</label>
-            <input type="text" id="username" name="username" placeholder="Entrez votre nom d'utilisateur">
-
-            <label for="password">Mot de passe :</label>
-            <input type="password" id="password" name="password" placeholder="Entrez votre mot de passe" oninput="maskPassword()">
-
-        </form>
-        <div>
-            <button type="submit" onclick="window.location.href='/bienvenu' ">Login</button>
-            <script>
-                    function maskPassword() {
-                    var passwordInput = document.getElementById("password");
-                    var maskedPassword = "";
-                        for (var i = 0; i < passwordInput.value.length; i++) {
-                        maskedPassword += "*"; // remplacer par un point pour un masquage plus visuel (•)
-                }
-                passwordInput.value = maskedPassword;
-           }
-    </script>
-        </div>
-    </form>
-</div>
+    <main id="MainLog2">
+        <form action="/bienvenu?username={username}&password={password}" method="GET">
+            <div class="ConnexionChamps" id="ConnexionChamps">
+                <div class="champs">
+                    <label for="username">Nom d'utilisateur :</label>
+                    <input type="text" id="username" name="username" placeholder="Entrez votre nom d'utilisateur">
+                    <label for="password">Mot de passe :</label>
+                    <input type="password" id="password" name="password" placeholder="Entrez votre mot de passe" oninput="maskPassword()">
+                    <a href="ForgotPassword.html" id="ForgetPSW"> mot de passe oublié</a> 
+                    <button type="submit" onclick="window.location.href='/bienvenu?username=' + document.getElementById('username').value + '&password=' + document.getElementById('password').value">connexion</button>
+                    <script>
+                        function maskPassword() {
+                        var passwordInput = document.getElementById("password");
+                        var maskedPassword = "";
+                            for (var i = 0; i < passwordInput.value.length; i++) {
+                            maskedPassword += "*"; // remplacer par un point pour un masquage plus visuel (•)
+                    }
+                    passwordInput.value = maskedPassword;
+               }
+        </script>
+                </div>           
+            </div>
+        </form> <!-- avant j'avais mis le forme plus ibriqué et ca m's cassez toute ma fenêtre
+        pour regler ce probleme j'ai donc ecarté le form, je l'ai rendu moins imbriqué-->
+    </main>
+    
 </body>
 </html>

@@ -34,25 +34,32 @@ public class myController implements WebMvcConfigurer {
         return "SignIn";
     }
 
+    @RequestMapping("/Style2")
+    public String s(){
+        return "Style2";
+    }
+
     @GetMapping("/bienvenu")
-    public String bienvenu(@RequestParam(value = "username", required = false) String username,
-                                           @RequestParam(value = "password", required = false) String password) {
+    public String bienvenu(@RequestParam(value = "username") String username,
+                                           @RequestParam(value = "password") String password) {
         System.out.println(username);
         System.out.println(password);
-        System.out.println("monsieur");
         if (username == null || password == null) {
-            return "bienvenu";
+            System.out.println("monsieur");
+            return "Home";
         }
         Optional<Login> tmp = loginRepositories.findByEmail(username);
         if (tmp.isPresent()) {
             System.out.println("bonjour");
             System.out.println("bonjour");
-            boolean bool = passwordEncoder.matches(tmp.get().getMotDePasse(), password);
+            boolean bool = passwordEncoder.matches(password, tmp.get().getMotDePasse());
             if (bool){
-                return "bienvenu";
+                System.out.println("merci");
+                return "Home";
             }
         }
-        return "bienvenu";
+        System.out.println("aurevoir");
+        return "Home";
     }
     @GetMapping("/register")
     public ResponseEntity<String> register(@RequestParam(value = "username", required = false) String username,
@@ -69,6 +76,51 @@ public class myController implements WebMvcConfigurer {
         // Traitez les données de l'utilisateur ici
         return ResponseEntity.ok("enregistrer avec succes");
     }
+
+    @RequestMapping("CreateWallet")
+    public String createWallet(){
+        return "CreateWallet";
+    }
+
+    /*
+
+    <form action="/bienvenu" method="POST">
+    <h2>Login</h2>
+    <form>
+        <label for="email">Email :</label>
+        <input type="email" id="email" name="email" placeholder="Entrez votre adresse email">
+
+        <label for="password">Mot de passe :</label>
+        <input type="password" id="password" name="motDePasse" placeholder="Entrez votre mot de passe" oninput="maskPassword()">
+
+    </form>
+    <div>
+        <button type="submit" onclick="sendLogin()">Login</button>
+        <script>
+            function sendLogin() {
+                var emailInput = document.getElementById("email").value;
+                var passwordInput = document.getElementById("password").value;
+                var login = {email: emailInput, motDePasse: passwordInput};
+                var xhr = new XMLHttpRequest();
+                xhr.open("POST", "/bienvenu");
+                xhr.setRequestHeader("Content-Type", "application/json;charset=UTF-8");
+                xhr.send(JSON.stringify(login));
+            }
+
+            function maskPassword() {
+                var passwordInput = document.getElementById("password");
+                var maskedPassword = "";
+                for (var i = 0; i < passwordInput.value.length; i++) {
+                    maskedPassword += "*"; // remplacer par un point pour un masquage plus visuel (•)
+                }
+                passwordInput.value = maskedPassword;
+            }
+        </script>
+    </div>
+</form>
+
+
+     */
 
 
 }

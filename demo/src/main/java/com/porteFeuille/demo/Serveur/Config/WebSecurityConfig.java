@@ -29,12 +29,12 @@ public class WebSecurityConfig {
     @Bean
     protected SecurityFilterChain configure(HttpSecurity http) throws Exception {
         http.authorizeHttpRequests((requests)->requests
-                .requestMatchers("/users", "/file", "/login").permitAll()
+                .requestMatchers("/users", "/file", "/login", "/CreateWallet").permitAll()
                 .anyRequest().permitAll()
                )
                 .formLogin()
                 .loginPage("/login")
-                .defaultSuccessUrl("/bienvenu", true)
+                .defaultSuccessUrl("/login", true)
                 .permitAll()
                 .and()
                 .logout()

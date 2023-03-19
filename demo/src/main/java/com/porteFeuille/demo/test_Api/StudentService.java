@@ -8,6 +8,7 @@ import java.util.List;
 import java.util.Optional;
 
 public class StudentService {
+    //<button type="submit" onclick="window.location.href='/bienvenu?username=' + document.getElementById('username').value + '&password=' + document.getElementById('password').value">Login</button>
 
 
     protected final StudentRepositories studentRepositories;
