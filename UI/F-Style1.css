@@ -1,22 +1,20 @@
-
-
 body {
     /* background-color: rgba(10, 136, 10, 0.864); */
-    background:url(./wallet\ client1.jpg) center/cover;
+    background:url(poigné.png) center/cover;
     min-height: 100vh;
     
     
 }
 
 .gridConnexion{
-    background-color: rgba(40, 214, 40, 0.823) ;
+    background-color: rgba(13, 0, 255, 0.785) ;
     width: 97%;    /* 95% */
     min-height: 700px; /* 550px */
-    border: 2px solid rgba(12, 255, 4, 0.901);
+    border: 2px solid rgba(19, 54, 193, 0.901);
     margin: 0% auto; 
     /* margin-top: 50px; */
     /* margin-bottom: 50px; */
-    box-shadow: rgba(22, 132, 29, 0.933) 3px 3px 14px 6px;
+    box-shadow: rgba(0, 93, 254, 0.933) 3px 3px 14px 6px;
     border-radius: 10px;
     padding: 0px;
     /* padding: 100px; */
@@ -74,7 +72,7 @@ input{
     width:  100%;
     height: 350%;
     border-radius: 10px;
-    background-color: rgba(88, 253, 12, 0.652);
+    background-color: rgba(19, 73, 237, 0.927);
     font-weight: 750;
     /* color: white; */
     /* input centré */
@@ -84,7 +82,7 @@ input{
 
 /* Lorsque les input sont survolés */
 input:hover{
-    background-color: rgba(40, 253, 12, 8);
+    background-color:rgba(3, 114, 239, 0.927) ;
     cursor: pointer;
 }
 
@@ -108,18 +106,3 @@ input:hover{
 
     
 }
-
-/*  peut etre à supp */
-#or{
-    position: absolute;
-    max-height: 10px;
-    margin: 10px;
-
-    left: 21.8%;/*écarte l'element de ..% du bas par rapport à sa position de base*/
-    bottom: 33.8%; /*écarte l'element de ..% du bas par rapport à sa position de base*/
-    font-size: 30px;
-    color: white;
-}
-
-
-

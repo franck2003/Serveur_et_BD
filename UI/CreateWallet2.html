@@ -28,39 +28,61 @@
                         <h2 id="txtMyWallet">Choisisser vos points de fournitures</h2>
                         
                         <div class="first">
-                        <label for="elec" id="elecLabel"> Eletricité </label>
-                        
+                            <div class="fournisseur">
+                            <label for="elec" id="elecLabel"> Eletricité </label>                    
           	                <select id="elec">
-            	                <option value="homme">Luminus</option>
-            	                <option value="femme">Electrabel</option>
+                                <option value="none" selected>Aucun</option>
+            	                <option value="Luminus">Luminus</option>
+            	                <option value="Electrabel">Electrabel</option>
           	                </select>
+                            </div>
+                            <div class="contrat">
+                            <label for="elec" id="elecLabel"> Durée du contrat </label>                    
+          	                <select id="elec">
+            	                <option value="Annuel">Annuel</option>
+            	                <option value="Femme">Mensuel</option>
+          	                </select>
+                            </div>
+
                         </div>
                         
                         <div class="second">
-                            <label for="water" id="waterLabel"> Eau </label>
-                            
-                                  <select id="water">
-                                    <option value="homme">SWDE</option>
-                                    <option value="femme">l'eau</option>
-                                  </select>
-                            </div>
 
-                            <div class="third">
+                            <div class="fournisseur">
+                                <label for="water" id="waterLabel"> Eau </label>
+                                <select id="water">
+                                    <option value="none" selected>Aucun</option>
+                                    <option value="SWDE">SWDE</option>
+                                    <option value="l'eau">l'eau</option>
+                                </select>    
+                            </div>
+                            <div class="contrat">
+                                <label for="water" id="waterLabel"> Durée du contrat </label>                    
+                                <select id="water">
+                                    <option value="Annuel">Annuel</option>
+                                    <option value="Mensuel">Mensuel</option>
+                                </select>
+                            </div>
+                        </div>
+
+                        <div class="third">
+                            
+                            <div class="fournisseur">
                                 <label for="gaz" id="gazLabel"> Gaz </label>
-                                
-                                      <select id="gaz">
-                                        <option value="homme"> gaz1</option>
-                                        <option value="femme"> gaz2</option>
-                                        <option value="femme"> gaz2</option>
-                                        <option value="femme"> gaz2</option>
-                                        <option value="femme"> gaz2</option>
-                                        <option value="femme"> gaz2</option>
-                                        <option value="femme"> gaz2</option>
-                                        <option value="femme"> gaz2</option>
-                                        <option value="femme"> gaz2</option>
-                                        <option value="femme"> gaz2</option>
-                                      </select>
-                                </div>
+                                <select id="gaz">
+                                    <option value="none" selected>Aucun</option>
+                                    <option value="Gaz1">Gaz1</option>
+                                    <option value="Gaz2">Gaz2</option>
+                                </select>    
+                            </div>
+                            <div class="contrat">
+                                <label for="gaz" id="gazLabel"> Durée du contrat </label>                    
+                                <select id="gaz">
+                                    <option value="Annuel">Annuel</option>
+                                    <option value="Mensuel">Mensuel</option>
+                                </select>
+                            </div>
+                        </div>
 
                         <input type="submit" formaction="Home.html" id="BtnConf" value="envoyer"> 
                     </div>

@@ -234,9 +234,13 @@ button:hover{
     align-content: space-between;
 }
 
+
+
 .first{
     margin: 0% auto;
-    word-spacing: 40px ;
+    /* word-spacing: 40px ; */
+    display: flex;
+    
 }
 
 #elecLabel{
@@ -249,14 +253,16 @@ button:hover{
     width: 200px;
     height: 30px;
     text-align: center;
-    transform: translateX(8%);
+    transform: translateX(0%);
+    border-radius: 7px;
+    border: 2px solid rgb(134, 138, 1);
 }
 
 
 .second{
     margin: 0% auto;
-    word-spacing: 40px ;
-    
+    /* word-spacing: 40px ; */
+    display: flex;
 }
 
 #waterLabel{
@@ -271,13 +277,15 @@ button:hover{
     width: 200px;
     height: 30px;
     text-align: center;
-    transform: translateX(20%);
+    transform: translateX(0%);
+    border-radius: 7px;
+    border: 2px solid rgb(8, 106, 136);
 }
 
 .third{
     margin: 0% auto;
-    word-spacing: 40px ;
-    
+    /* word-spacing: 40px ; */
+    display: flex;
 }
 
 #gazLabel{
@@ -292,7 +300,9 @@ button:hover{
     width: 200px;
     height: 30px;
     text-align: center;
-    transform: translateX(20%);
+    /* transform: translateX(20%); */
+    border-radius: 7px;
+    border: 2px solid rgb(91, 90, 92);
 }
 
 /* ------------------------------------ PAGE Setting.hmtl  ----------------------------------------- */
@@ -390,7 +400,7 @@ button:hover{
 }
 
 
-/* --------------------------------------- Page ManageWallet.html ------------------------------------------- */
+/* --------------------------------------- Page ManageWallet.html +  ShowWallet.html ------------------------------------------- */
 
 #formMW{
     display: grid;
@@ -505,3 +515,5 @@ button:hover{
     border: 5px solid rgb(7, 77, 4);
     box-shadow: rgba(22, 132, 29, 0.933) 3px 3px 5px 3px;
 }
+
+/* --------------------------------------- Page ShowSuppliers.html + ShowHabitations.html ------------------------------------ */
