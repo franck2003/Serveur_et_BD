@@ -13,7 +13,7 @@ import org.springframework.dao.DataIntegrityViolationException;
 public class ConsommateurConfig {
     @Autowired
     ConsommateurRepositories consommateurRepositories;
-   @Bean
+   /*@Bean
     CommandLineRunner ajouterConsommateur(){
         return args -> {
             Consommateur consommateur = new Consommateur("njampou","franck", "francknjampou01@gmail.com");
@@ -29,5 +29,5 @@ public class ConsommateurConfig {
                 System.out.println("veillez saisir une adresse valide svp");
             }
         };
-    }
+    }*/
 }

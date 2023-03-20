@@ -1,13 +1,19 @@
 package com.porteFeuille.demo.Controller;
 
+import com.porteFeuille.demo.Serveur.Entity.Entity_table.Consommateur;
 import com.porteFeuille.demo.Serveur.Entity.Entity_table.Login;
+import com.porteFeuille.demo.Serveur.Repositories.ConsommateurRepositories;
 import com.porteFeuille.demo.Serveur.Repositories.LoginRepositories;
 import org.apache.coyote.Response;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.security.access.prepost.PostAuthorize;
+import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
+import org.springframework.validation.BindingResult;
+import org.springframework.validation.annotation.Validated;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -20,11 +26,13 @@ import java.util.Optional;
 
 @Controller
 public class myController implements WebMvcConfigurer {
-
     @Autowired
     private PasswordEncoder passwordEncoder;
     @Autowired
-    private LoginRepositories loginRepositories;
+    private ConsommateurRepositories consommateurRepositories;
+
+    @Autowired
+    private  LoginRepositories loginRepositories;
 
    // public void addRessourceHandlers(ResourceHandlerRegistry registry){
      //   registry.addResourceHandler("/css/**").addResourceLocations("classpath:/static/css/");
@@ -61,7 +69,7 @@ public class myController implements WebMvcConfigurer {
         System.out.println("aurevoir");
         return "Home";
     }
-    @GetMapping("/register")
+    /*@GetMapping("/register")
     public ResponseEntity<String> register(@RequestParam(value = "username", required = false) String username,
                               @RequestParam(value = "password", required = false) String password) {
 
@@ -75,52 +83,80 @@ public class myController implements WebMvcConfigurer {
         loginRepositories.save(login);
         // Traitez les données de l'utilisateur ici
         return ResponseEntity.ok("enregistrer avec succes");
+    }*/
+    @PostMapping("/process_register")
+    public String processRegister(@Validated Consommateur consommateur, BindingResult result, Model model) {
+        if(result.hasErrors()) {
+            return "error";
+        }
+
+        BCryptPasswordEncoder passwordEncoder = new BCryptPasswordEncoder();
+        String password = passwordEncoder.encode(consommateur.getMotDePasse());
+        consommateur.setMotDePasse(password);
+        System.out.println(consommateur.getEmail());
+
+        loginRepositories.save(new Login(consommateur.getEmail(), consommateur.getMotDePasse()));
+        consommateurRepositories.save(consommateur);
+
+        return "login";
     }
 
-    @RequestMapping("CreateWallet")
+    @PostMapping("/register")
+    public String Register(@Validated Login login, BindingResult result, Model model) {
+
+        Optional<Login> tmp = loginRepositories.findByEmail(login.getEmail());
+        if (tmp.isPresent()) {
+            System.out.println("bonjour");
+            System.out.println("bonjour");
+            boolean bool = passwordEncoder.matches(login.getMotDePasse(), tmp.get().getMotDePasse());
+            if (bool){
+                System.out.println("merci");
+                return "Home";
+            }
+        }
+        System.out.println("aurevoir");
+        return "error";
+    }
+    @GetMapping("/SignUp")
+    public String showRegistrationForm(Model model) {
+        model.addAttribute("consommateur", new Consommateur());
+
+        return "signUp";
+    }
+
+    @GetMapping("/login")
+    public String showLoginForm(Model model) {
+        model.addAttribute("login", new Login());
+        return "login";
+    }
+
+    //
+
+    @GetMapping("CreateWallet")
     public String createWallet(){
         return "CreateWallet";
     }
 
-    /*
+    @GetMapping("ManageWallet")
+    public String ManageWallet(){
+        return "ManageWallet";
+    }
+/*
+    @GetMapping("ManageWallet")
+    public String ManageWallet(){
+        return "ManageWallet";
+    }
 
-    <form action="/bienvenu" method="POST">
-    <h2>Login</h2>
-    <form>
-        <label for="email">Email :</label>
-        <input type="email" id="email" name="email" placeholder="Entrez votre adresse email">
+    @GetMapping("ManageWallet")
+    public String ManageWallet(){
+        return "ManageWallet";
+    }
 
-        <label for="password">Mot de passe :</label>
-        <input type="password" id="password" name="motDePasse" placeholder="Entrez votre mot de passe" oninput="maskPassword()">
-
-    </form>
-    <div>
-        <button type="submit" onclick="sendLogin()">Login</button>
-        <script>
-            function sendLogin() {
-                var emailInput = document.getElementById("email").value;
-                var passwordInput = document.getElementById("password").value;
-                var login = {email: emailInput, motDePasse: passwordInput};
-                var xhr = new XMLHttpRequest();
-                xhr.open("POST", "/bienvenu");
-                xhr.setRequestHeader("Content-Type", "application/json;charset=UTF-8");
-                xhr.send(JSON.stringify(login));
-            }
-
-            function maskPassword() {
-                var passwordInput = document.getElementById("password");
-                var maskedPassword = "";
-                for (var i = 0; i < passwordInput.value.length; i++) {
-                    maskedPassword += "*"; // remplacer par un point pour un masquage plus visuel (•)
-                }
-                passwordInput.value = maskedPassword;
-            }
-        </script>
-    </div>
-</form>
-
-
-     */
+    @GetMapping("ManageWallet")
+    public String ManageWallet(){
+        return "ManageWallet";
+    }
+*/
 
 
 }

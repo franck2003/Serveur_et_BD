@@ -22,11 +22,5 @@ public class ConsommateurController {
         return consommateurService.getConsommateur(id);
     }
 
-    @PostMapping("/postConso")
-    public String postConso(@RequestParam String nom, @RequestParam String prenom, @RequestParam String email, @RequestParam String mdp){
-        Consommateur consommateur = new Consommateur(nom, prenom, email);
-        consommateurService.saveConso(consommateur);
-        return "New Conso added !";
-    }
 
 }

@@ -14,7 +14,10 @@ public class Consommateur  {
     private Long ConsommateurId;
     private String Prenom;
     private String Nom;
-    private String Email;
+
+    private String motDePasse;
+
+    private String email;
 
     //ajouter un champs mot de passe et le supprimer dans la classe login
     public Consommateur() {
@@ -23,11 +26,11 @@ public class Consommateur  {
     public Consommateur(Long consommateurId) {
         ConsommateurId = consommateurId;
     }
-
-    public Consommateur(String Nom, String Prenom, String Email) {
-        this.Prenom = Prenom;
-        this.Nom = Nom;
-        this.Email = Email;
+    public Consommateur(String nom, String prenom,  String email, String motDePasse) {
+        Prenom = prenom;
+        Nom = nom;
+        this.motDePasse = motDePasse;
+        this.email = email;
     }
 
     public void setConsommateurId(Long consommateurId) {
@@ -35,8 +38,9 @@ public class Consommateur  {
     }
 
     public void setEmail(String email) {
-        Email = email;
+        this.email = email;
     }
+
 
     public void setNom(String nom) {
         Nom = nom;
@@ -46,12 +50,20 @@ public class Consommateur  {
         Nom = nom_Consommateur;
     }
 
+    public String getMotDePasse() {
+        return motDePasse;
+    }
+
+    public void setMotDePasse(String motDePasse) {
+        this.motDePasse = motDePasse;
+    }
+
     public void setPrenom(String prenom) {
         Prenom = prenom;
     }
 
     public String getEmail() {
-        return Email;
+        return email;
     }
 
     public String getPrenom() {

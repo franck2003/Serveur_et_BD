@@ -10,6 +10,6 @@ import org.springframework.lang.NonNull;
 import java.util.Optional;
 
 public interface ConsommateurRepositories extends JpaRepository<Consommateur, Long>, JpaSpecificationExecutor<Consommateur> {
-    @Query("select c from Consommateur c where c.Email = ?1")
+    @Query("select c from Consommateur c where c.email = ?1")
     Optional<Consommateur> findByEmail(@NonNull String Email);
 }

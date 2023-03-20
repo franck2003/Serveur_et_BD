@@ -22,7 +22,7 @@ public class ConsommationConfig{
     @Autowired
     ConsommateurRepositories consommateurRepositories;
 
-    @Bean
+    /*@Bean
     CommandLineRunner ajouterDonneesDeConsommation(){
         return args ->{
             Habitation habitation = new Habitation( 1252L);
@@ -34,7 +34,7 @@ public class ConsommationConfig{
                 System.out.println("valeur presente");
             }
         };
-    }
+    }*/
 }
 /*
 est ce que a chaque fin du mois je dois save la meme habitation et reset la valeur a 0
