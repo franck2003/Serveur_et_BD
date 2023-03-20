@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Acceuil</title>
+    <link rel="stylesheet" href="Home.css">
+
+</head>
+<body>
+<header>
+
+    <h4 id="title"> Acceuil </h4>
+    <nav>
+        <ul class="elem_toolbar">
+            <!-- <li><a href="#">services</a></li> -->
+            <li><a href="Setting.html"><img class="logo" src="SettingsIcon.png" alt="logo"></a></li>
+            <li><a href="Notifications.html"><img class="logo" src="NotifWhite.png" alt="logo"></a></li>
+        </ul>
+    </nav>
+    <a class="btn" href="Login.html"><button>Deconnexion</button></a>
+
+</header>
+
+<main>
+    <div class="containerHome">
+        <form id="placement">
+            <div class="input">
+                <input type="submit" formaction="Home.html" id="BtnConf" value="Visualiser portefeuille">
+                <form action="/ManageWallet" method="GET">
+                <input type="submit" formaction="ManageWallet" id="BtnConf" value="Gestion du portefeuille">
+                </form>
+                <form action="/CreateWallet" method="GET">
+                <input type="submit" formaction= "CreateWallet" value="Créer portefeuile">
+                </form>
+                <input type="submit" formaction="Home.html" id="BtnConf" value="Visualisation statistiques">
+                <input type="submit" formaction="Home.html" id="BtnConf" value="Facturation">
+            </div>
+        </form>
+
+        <img id="icon" src ="wallet-icon-png-5.png">
+    </div>
+</main>
+
+</body>
+</html>

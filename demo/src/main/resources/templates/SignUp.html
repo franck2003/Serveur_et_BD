@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="ISO-8859-1">
+    <link rel="stylesheet" href="/Style2.css">
+    <title>Sign Up - CodeJava</title>
+</head>
+<body>
+<div class="container text-center" style="margin: 0 auto;">
+    <div>
+        <h1 style="text-align: center;">User Registration - Sign Up</h1>
+    </div>
+</div>
+    <form th:action="@{/process_register}" th:object="${consommateur}"
+          method="post" style="max-width: 600px; margin: 0 auto;">
+        <div class="m-3 text-center">
+            <div class="form-group row">
+                <label class="col-4 col-form-label">email: </label>
+                <div class="col-8">
+                    <input type="email" th:field="*{email}" class="form-control" required />
+                </div>
+            </div>
+
+            <div class="form-group row">
+                <label class="col-4 col-form-label">mot De Passe: </label>
+                <div class="col-8">
+                    <input type="password" th:field="*{motDePasse}" class="form-control" required minlength="6" maxlength="10"/>
+                </div>
+            </div>
+
+            <div class="form-group row">
+                <label class="col-4 col-form-label">First Name: </label>
+                <div class="col-8">
+                    <input type="text" th:field="*{Nom}" class="form-control"
+                           required minlength="2" maxlength="20"/>
+                </div>
+            </div>
+
+            <div class="form-group row">
+                <label class="col-4 col-form-label">Last Name: </label>
+                <div class="col-8">
+                    <input type="text" th:field="*{Prenom}" class="form-control"
+                           required minlength="2" maxlength="20" />
+                </div>
+            </div>
+
+            <div>
+                <button type="submit" class="btn btn-primary">Sign Up</button>
+            </div>
+        </div>
+    </form>
+</div>
+</body>
+</html>

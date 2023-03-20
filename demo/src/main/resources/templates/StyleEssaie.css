@@ -1,0 +1,68 @@
+
+body{
+    background-color: rgba(40, 214, 40, 0.823);
+    position: relative;    
+}
+
+/*
+#MainLog2{
+    
+    min-height: 700px;
+    width: 90%;
+    background: rgba(0, 115, 255, 0);
+    /* centrer une boite  
+    margin: 0% auto;
+    border: 2px solid rgba(12, 255, 4, 0.901);
+    border-radius: 10px; 
+    /* si on met 4 param on touche à tout les cotés 0,0,2,2
+    box-shadow: rgba(22, 132, 29, 0.933) 3px 3px 14px 6px;
+    padding : 15px;
+
+}
+*/
+
+#ConnexionChamps{
+    /* positionement du cadre */
+    left: 28%;
+    top: 25%;
+    bottom: 25%;
+    transform: translateY(20%); 
+    /* transform: translateY(10%); */
+    position: absolute;
+    /* dimension du cadre */
+    min-height: 500px;
+    width: 40%;
+    background: rgba(0, 115, 255, 0);
+    /* centrer une boite*   */
+    margin: 0% auto;
+    border: 2px solid rgba(12, 255, 4, 0.901);
+    border-radius: 10px; 
+    /* si on met 4 param on touche à tout les cotés 0,0,2,2*/
+    box-shadow: rgba(22, 132, 29, 0.933) 3px 3px 14px 6px;
+    padding : 15px;
+    
+
+    /* left: 50%;
+    transform: translateX(-50%); */
+}
+
+.champs{
+    display: grid;
+    margin: 0% auto;
+    /* grid-template-rows: ; */
+}
+
+
+/* 
+.champs ul{
+    padding: 0;
+    display: grid;
+    justify-content: space-evenly;
+    list-style: none;
+} */
+
+
+
+
+
+

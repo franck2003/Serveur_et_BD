@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nouveau Compte</title>
+    <link rel="shortcut icon" href="wallet-icon-png-5.png">
+    <link rel="stylesheet" href="Style2.css">
+
+</head>
+
+<script>
+    function postF() {
+      event.preventDefault(); //empêche la soumission du formulaire
+      const formData = new FormData();
+      formData.append("nom", document.getElementById("nomconso").value);
+      formData.append("prenom", document.getElementById("prenom").value);
+      formData.append("email", document.getElementById("email").value);
+      formData.append("mdp", document.getElementById("mdp").value);
+      
+      fetch("http://localhost:8010/postConso", {
+        method: "POST",
+        body: formData
+      })
+      .then(response => response.text())
+      .then(data => {
+        console.log(data); //affiche la réponse de l'API dans la console
+      })
+      .catch(error => {
+        console.error(error);
+      });
+    }
+    </script>
+<body>
+    <main class="mainForgotPassword">
+        <form method="POST" onsubmit="postF()">
+            <div class="resetPSWChamps" id="resetPSWChamps">
+                <div class="champsPSW">
+                    <h2 id="textResetPSW">Nouveau compte</h2>
+                    
+                    <input type="text" id="nomconso" placeholder="Nom" required>
+                    <input type="text" id="prenom" placeholder="Prénom" required>
+                    <input type="text" id="email" placeholder="Adresse mail" required>
+                    <input type="text" id="mdp" placeholder="Mot de passe" required>
+                    <input type="submit" formaction="Home.html" id="BtnConf" value="envoyer" onclick="postF()"> 
+                </div>
+            </div>
+        </form>
+    </main>
+</body>
+</html>
