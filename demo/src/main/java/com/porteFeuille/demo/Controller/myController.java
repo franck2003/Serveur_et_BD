@@ -44,10 +44,6 @@ public class myController implements WebMvcConfigurer {
         return "SignIn";
     }
 
-    @RequestMapping("/Style2")
-    public String s(){
-        return "Style2";
-    }
 
     @GetMapping("/Style2.css")
     public ResponseEntity<Resource> getPageCss(){
