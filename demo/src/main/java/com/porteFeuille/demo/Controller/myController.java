@@ -4,8 +4,10 @@ import com.porteFeuille.demo.Serveur.Entity.Entity_table.Consommateur;
 import com.porteFeuille.demo.Serveur.Entity.Entity_table.Login;
 import com.porteFeuille.demo.Serveur.Repositories.ConsommateurRepositories;
 import com.porteFeuille.demo.Serveur.Repositories.LoginRepositories;
-import org.apache.coyote.Response;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.core.io.ClassPathResource;
+import org.springframework.core.io.Resource;
+import org.springframework.http.MediaType;
 import org.springframework.http.ResponseEntity;
 import org.springframework.security.access.prepost.PostAuthorize;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
@@ -45,6 +47,12 @@ public class myController implements WebMvcConfigurer {
     @RequestMapping("/Style2")
     public String s(){
         return "Style2";
+    }
+
+    @GetMapping("/Style2.css")
+    public ResponseEntity<Resource> getPageCss(){
+        Resource resource = new ClassPathResource("/static/css/Style2.css");
+        return ResponseEntity.ok().contentType(MediaType.parseMediaType("text/css")).body(resource);
     }
 
     @GetMapping("/bienvenu")
