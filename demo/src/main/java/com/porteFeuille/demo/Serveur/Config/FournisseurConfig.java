@@ -18,7 +18,7 @@ public class FournisseurConfig {
 
     @Autowired
     FournisseurRepositories repositories;
-
+/*
     @Bean
     CommandLineRunner ajouterClient(){
         return args ->{
@@ -32,7 +32,7 @@ public class FournisseurConfig {
                 System.out.println("données existe dans la BD");
             }
         };
-    }
+    }*/
 /*
     @Bean
     CommandLineRunner supprimerClient(){

@@ -19,10 +19,11 @@ public class HabitationConfig {
 
     @Autowired
     private PointFournitureRepositories pointFournitureRepositories;
+    /*
     @Bean
     CommandLineRunner ajouterHabitation(){
         return args ->{
-            Consommateur consommateur = new Consommateur(2L);
+            Consommateur consommateur = new Consommateur(7152L);
             Adresse adresse = new Adresse("roiAlbert",642,"maison","Mons",7012);
             PointFourniture pointFourniture = new PointFourniture(102L);
             Fournisseur fournisseur = new Fournisseur(2002L);
@@ -33,5 +34,5 @@ public class HabitationConfig {
                 System.out.println("l'information existe sur la l'habitation existe dans la base de données");
             }
         };
-    }
+    }*/
 }

@@ -16,7 +16,8 @@ import java.util.List;
 @RestController
 @RequestMapping
 
-public class GretingController {
+public class
+GretingController {
     @Autowired
     LoginRepositories loginRepositories;
 

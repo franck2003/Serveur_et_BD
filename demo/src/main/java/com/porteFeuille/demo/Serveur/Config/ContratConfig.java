@@ -24,8 +24,8 @@ public class ContratConfig {
     CommandLineRunner ajouterContrat() {
         return args ->{
             Fournisseur fournisseur = new Fournisseur(2002L);
-            Consommateur consommateur = new Consommateur(2L);
-            PointFourniture pointFourniture = new PointFourniture( 102L);
+            Consommateur consommateur = new Consommateur(7152L);
+            PointFourniture pointFourniture = new PointFourniture( 103L);
             Habitation habitation = new Habitation(1252L);
             Contrat contrat = new Contrat(consommateur, "ouvert",fournisseur,habitation,pointFourniture,new Date());
             try{

@@ -17,7 +17,7 @@ public class PorteFeuilleConfig {
 
     @Autowired
     PorteFeuilleRepositories porteFeuilleRepositories;
-
+/*
     @Bean
     CommandLineRunner ajouterPorteFeuille(){
         return args ->{
@@ -31,5 +31,5 @@ public class PorteFeuilleConfig {
 
             }
         };
-    }
+    }*/
 }

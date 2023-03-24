@@ -8,6 +8,7 @@ import java.util.NoSuchElementException;
 
 @Configuration
 public class StudentConfig {
+    /*
 // service, model , cob
     @Bean
     CommandLineRunner commandLineRunner( StudentRepositories repositories){
@@ -37,5 +38,5 @@ public class StudentConfig {
                     repositories.updateNameByName("alain", "mariam");
                     System.out.println("pappppppppppppp");
                 };
-    }
+    }*/
 }

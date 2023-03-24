@@ -18,7 +18,7 @@ import javax.swing.plaf.PanelUI;
 
 @EnableWebSecurity
 @Configuration
-public class WebSecurityConfig {
+public class WebSecurityConfig  {
     @Autowired
     private DataSource dataSource;
 

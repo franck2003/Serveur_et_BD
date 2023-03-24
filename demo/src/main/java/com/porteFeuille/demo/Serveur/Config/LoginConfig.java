@@ -29,6 +29,7 @@ public class LoginConfig {
             }
         };
     }
+    /*
     @Bean
     CommandLineRunner exist(LoginRepositories repositories){
         return args ->{
@@ -47,5 +48,5 @@ public class LoginConfig {
                 System.out.println("L'email n'existe pas dans la base de données.");
             }
         };
-    }
+    }*/
 }

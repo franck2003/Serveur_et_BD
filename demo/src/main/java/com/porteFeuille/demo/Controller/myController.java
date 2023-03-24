@@ -1,9 +1,7 @@
 package com.porteFeuille.demo.Controller;
 
-import com.porteFeuille.demo.Serveur.Entity.Entity_table.Consommateur;
-import com.porteFeuille.demo.Serveur.Entity.Entity_table.Login;
-import com.porteFeuille.demo.Serveur.Repositories.ConsommateurRepositories;
-import com.porteFeuille.demo.Serveur.Repositories.LoginRepositories;
+import com.porteFeuille.demo.Serveur.Entity.Entity_table.*;
+import com.porteFeuille.demo.Serveur.Repositories.*;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.core.io.ClassPathResource;
 import org.springframework.core.io.Resource;
@@ -23,8 +21,7 @@ import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.servlet.config.annotation.ResourceHandlerRegistry;
 import org.springframework.web.servlet.config.annotation.WebMvcConfigurer;
 
-import java.util.List;
-import java.util.Optional;
+import java.util.*;
 
 @Controller
 public class myController implements WebMvcConfigurer {
@@ -35,6 +32,20 @@ public class myController implements WebMvcConfigurer {
 
     @Autowired
     private  LoginRepositories loginRepositories;
+
+    @Autowired
+    FournisseurRepositories fournisseurRepositories;
+    @Autowired
+    ConsommationRepositories consommationRepositories;
+
+    @Autowired
+    HabitationRepositories habitationRepositories;
+
+    @Autowired
+    FacturationRepositories facturationRepositories;
+
+    @Autowired
+    AccounteMentuelRepositories acount;
 
    // public void addRessourceHandlers(ResourceHandlerRegistry registry){
      //   registry.addResourceHandler("/css/**").addResourceLocations("classpath:/static/css/");
@@ -141,9 +152,26 @@ public class myController implements WebMvcConfigurer {
         return "CreateWallet";
     }
 
+    @GetMapping("facture_eau")
+    public String facture_eau(){
+        return "facture_eau";
+    }
+
     @GetMapping("ManageWallet")
     public String ManageWallet(){
         return "ManageWallet";
+    }
+
+
+    public List<Date> generatesDates(){
+        List<Date> dates = new ArrayList<>();
+        dates.add(new Date());
+        Date dateFin = new Date();
+        Calendar calendar = Calendar.getInstance();
+        calendar.add(Calendar.YEAR, 1);
+        dateFin.setTime(calendar.getTimeInMillis());
+        dates.add(dateFin);
+        return dates;
     }
 /*
     @GetMapping("ManageWallet")
