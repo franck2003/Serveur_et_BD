@@ -1,0 +1,100 @@
+body{
+
+    /* si je veut mettre une couleur en fond */
+    /* background-color: rgba(40, 214, 40, 0.823); */
+    /* si je veux mettre une image en fond */
+    background:url(./wallet\ client1.jpg) center/cover;
+    min-height: 100vh;  /*à enlever*/
+    position: relative;    
+}
+
+#ConnexionChamps{
+    background-color: rgba(13, 0, 255, 0.785) ;
+    /* positionement du cadre */
+    left: 28%;
+    top: 25%;
+    bottom: 25%;
+    transform: translateY(20%); 
+    /* transform: translateY(10%); */
+    position: absolute;
+    /* dimension du cadre */
+    min-height: 500px;
+    width: 40%;
+    /* background: rgba(0, 115, 255, 0); */
+    /* centrer une boite*   */
+    margin: 0% auto;
+    border: 2px solid rgba(19, 54, 193, 0.901);
+    border-radius: 10px; 
+    /* si on met 4 param on touche à tout les cotés 0,0,2,2*/
+    box-shadow: rgba(0, 93, 254, 0.933) 3px 3px 14px 6px;
+    padding : 15px;
+    /* me permet de centrer ma grid connexionChamps */
+    left: 30%;
+    transform: translateY(-19%);
+}
+
+.champs{
+    /* padding: 32%; */
+    /* border: 2px solid rgba(29, 4, 255, 0.901); */
+    display: grid;
+    margin: auto;
+    width: 50%;
+    /* max-height: 100%; */
+    height: 60%;
+    margin-top: 15%;
+}
+
+#name{ width: 50%; /*largeur par rapport à la grille champs*/
+    margin:  auto auto; /*marge automatqiue par rapport à la grille champs. permet de le centrer + de reduire sa taille en hauteur*/
+    /* margin-bottom: 0%; me permet de diminuer l'espace entre les 2 cases de champs */
+    padding: 2px; /*profondeur de l'ecrito Nom*/
+}
+
+#PSW{
+    width: 50%; /*largeur par rapport à la grille champs*/
+    margin: auto auto; /*marge automatqiue par rapport à la grille champs. permet de le centrer + de reduire sa taille en hauteur*/
+    padding: 2px; /*profondeur de l'ecrito Nom*/
+}
+
+/* code alternatif
+#PSW{
+    width: 50%; largeur par rapport à la grille champs
+    margin: 0% auto; marge automatqiue par rapport à la grille champs. permet de le centrer + de reduire sa taille en hauteur
+    padding: 2px; profondeur de l'ecrito Nom
+    height: 30%;
+    margin-top: 5%;
+}
+
+*/
+
+/* pas le choix que de créer un form afin que le bouton connexion fonctionne */
+form{
+    text-align: center;
+}
+
+#BtnConf{
+    margin:  auto; /*me permet d'aligner mon texte au centre de la grid*/
+    vertical-align: middle; /* permet de centrer verticalement un texte !attention! margin doit être auto pour tout les cotés*/
+    border: 2px solid rgb(8, 9, 79);
+    border-radius: 10px;
+    background-color: rgba(19, 73, 237, 0.927);
+    color: rgb(244, 225, 225);
+    padding: 4%;
+    transition: 0.2s;
+    font-size: 110%; /*taille du mot connexion*/
+}
+
+/* lorsque le bouton est survolé */
+#BtnConf:hover{
+    cursor: pointer;
+    background-color:rgba(3, 114, 239, 0.927) ;
+    box-shadow: rgba(24, 66, 205, 0.933) 2px 2px 5px 3px;
+}
+
+/* texte mot de pase oublié */
+#ForgetPSW{
+    /* text-align: center; */
+    margin: auto;
+    vertical-align: middle;
+    color: white;
+}

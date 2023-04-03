@@ -4,14 +4,13 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Gestion du portefeuille</title>
-    <link rel="stylesheet" href="Style3.css">
+    <title>Settings</title>
+    <link rel="stylesheet" href="F-Setting.css">
     <link rel="shortcut icon" href="wallet-icon-png-5.png">
-
 </head>
 <body>
     <header>
-        <h4 id="title"> Gestion du portefeuille </h4>
+        <h4 id="title"> Paramètres </h4>
         <nav>
             <ul class="elem_toolbar">
                 <!-- <li><a href="#">services</a></li> -->
@@ -23,14 +22,21 @@
         <a class="btn" href="Login.html"><button>Deconnexion</button></a>
     </header>
     <main>
-        <form id="FormMW">
-            <div class="boutonOpt">
-                <input type="submit" formaction="#" id="BtnOpt" value="Supprimer portefeuille"> 
-                <input type="submit" formaction="MyConsumption.html" id="BtnOpt" value="Ma consommation"> 
-                <input type="submit" formaction="#" id="BtnOpt" value="Modifier Portefeuille"> 
-                <input type="submit" formaction="#" id="BtnOpt" value="Ajouter Sous-Portefeuille"> 
+        <form>
+        <div class="setting">
+            <div id="lang">
+                <h2 id="LG">Langue</h2>
+                <input type="submit" id="BtnLG" value="Français"> 
+                <input type="submit" id="BtnLG" value="Anglais"> 
             </div>
-        </form>    
+        
+            <div id="PSW">
+                <h2 id="MPSW">Modifier Mot de passe</h2>
+                <input type="submit" formaction="#" id="BtnLG" value="Modifier"> 
+                
+            </div>
+        </div>
+        </form>
     </main>
 </body>
 </html>

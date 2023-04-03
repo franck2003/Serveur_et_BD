@@ -74,7 +74,7 @@ input{
     border-radius: 10px;
     background-color: rgba(19, 73, 237, 0.927);
     font-weight: 750;
-    /* color: white; */
+    color: white;
     /* input centré */
     /* right: 50%;  */
     /* transform: translateX(50%); */
@@ -103,6 +103,11 @@ input:hover{
     color: white;
     margin-bottom: 10%;
     text-shadow: 2px 2px 1px black ;
-
     
+}
+
+#logo{
+    /* background-color: black; */
+    height: 500px;
+    width: 550px;
 }
