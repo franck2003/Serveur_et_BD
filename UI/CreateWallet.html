@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Créer Portefeuille/Habitation</title>
+    <link rel="stylesheet" href="Style3.css">
+    <link rel="shortcut icon" href="wallet-icon-png-5.png">
+
+</head>
+<body>
+    <header>
+        <h4 id="title"> Habitation </h4>
+        <nav>
+            <ul class="elem_toolbar">
+                <!-- <li><a href="#">services</a></li> -->
+                <li><a href="#"><img class="logo" src="SettingsIcon.png" alt="logo"></a></li>
+                <li><a href="#"><img class="logo" src="NotifWhite.png" alt="logo"></a></li>
+            </ul>
+        </nav>
+        
+        <a class="btn" href="Login.html"><button>Deconnexion</button></a>
+    </header>
+    <main>
+        <form>
+            <div class="WalletChamps" id="WalletChamps">
+                    <div class="champs">
+                        <h2 id="txtMyWallet">Mon portefeuille</h2>
+                        <input type="text" id="ID" placeholder="ID" required>
+                        <input type="text" id="Street" placeholder="Rue" required>
+                        <input type="text" id="Number" placeholder="Numero" required>
+                        <input type="text" id="City" placeholder="Ville" required>
+                        <input type="text" id="CodePostal" placeholder="Code Postal" required>
+                        <input type="submit" formaction="CreateWallet2.html" id="BtnConf" value="envoyer"> 
+                    </div>
+            </div>
+        </form>
+    </main>
+</body>
+</html>
