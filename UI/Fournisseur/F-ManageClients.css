@@ -1,0 +1,117 @@
+
+body{
+    box-sizing: border-box;
+    margin-left:1.2%;
+    padding: 0;
+    width: 96%;
+    /* background-color: #24252A; */
+    background:url(./poigné.png) center/cover ;
+    
+}
+
+
+li, a, button{
+    font-family: Arial, Helvetica, sans-serif;
+    font-weight: 500;
+    font-size: 16px;
+    color: #edf0f1;
+    text-decoration: none;
+}
+
+header{
+    display: flex;
+    /* justify-content: space-between; */
+    justify-content:right;
+    align-items: center;
+    padding:30px 2.5%;
+    border: 2px solid rgba(19, 54, 193, 0.901);
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+    width: 97%;
+    margin: 0% auto;
+    max-height: 10px;
+    /* transform: translateY(10%); */
+    background: rgb(36, 106, 236);
+    box-shadow: rgba(0, 93, 254, 0.933) 3px 3px 14px 6px;
+}
+
+main{
+    background-color: rgba(13, 0, 255, 0.785) ;
+    padding:30px 5%;
+    border: 2px solid rgba(19, 54, 193, 0.901);
+    border-bottom-left-radius: 10px;
+    border-bottom-right-radius: 10px;
+    min-height: 700px;
+    color: azure;
+    width: 92%;
+    margin: 0% auto;
+    border-top: none;
+    box-shadow: rgba(0, 93, 254, 0.933) 3px 3px 14px 6px;
+}
+
+#title{
+    color: white;
+    font-size: x-large;
+    margin-right: auto;
+}
+
+.elem_toolbar{
+    /* border: 2px solid red; */
+    list-style: none;
+}
+
+.elem_toolbar li{
+    display:inline-block;
+    padding: 0px 10px;
+}
+
+.elem_toolbar li img{
+    transition: all 0.3s ease 0s;
+    /* border: solid 2px blue; */
+    height: 30px;
+    margin-top: 5px;
+}
+
+button{
+    padding:9px 25px;
+    border: 2px solid rgb(8, 9, 79);
+    border-radius: 50px;
+    cursor: pointer;
+    transition: all 0.3s ease 0s;
+    background-color: rgba(19, 73, 237, 0.927);
+    width: 100%;
+    
+}
+
+button:hover{
+    background-color:rgba(3, 114, 239, 0.927) ;
+    box-shadow: rgba(24, 66, 205, 0.933) 2px 2px 5px 3px;
+}
+
+.clients{
+    height: 600px;
+    background-color: white;
+    color: black;
+}
+
+#BtnNC{
+    margin-left: 42.5%;
+    margin-top: 40px;
+    border: 2px solid rgb(8, 9, 79);
+    border-radius: 10px;
+    background-color: rgba(19, 73, 237, 0.927);
+    color: rgb(244, 225, 225);
+    padding: 4%;
+    transition: 0.2s;
+    font-size: 110%; 
+    /* height: 20px ; */
+    padding: 20px;
+    width: 200px;
+
+}
+
+#BtnNC:hover{
+    cursor: pointer;
+    background-color:rgba(3, 114, 239, 0.927) ;
+    box-shadow: rgba(24, 66, 205, 0.933) 2px 2px 5px 3px;
+}

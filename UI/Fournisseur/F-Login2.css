@@ -3,7 +3,7 @@ body{
     /* si je veut mettre une couleur en fond */
     /* background-color: rgba(40, 214, 40, 0.823); */
     /* si je veux mettre une image en fond */
-    background:url(./wallet\ client1.jpg) center/cover;
+    background:url(./poigné.png) center/cover;
     min-height: 100vh;  /*à enlever*/
     position: relative;    
 }

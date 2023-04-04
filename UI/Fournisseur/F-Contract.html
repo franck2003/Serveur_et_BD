@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nouveau Client : Contrat</title>
+    <link rel="stylesheet" href="F-Contract.css">
+    <link rel="shortcut icon" href="wallet-icon-png-5.png">
+</head>
+<body>
+    <header>
+        <h4 id="title"> Nouveau Client : Contrat </h4>
+        <nav>
+            <ul class="elem_toolbar">
+                <!-- <li><a href="#">services</a></li> -->
+                <li><a href="#"><img class="logo" src="SettingsIcon.png" alt="logo"></a></li>
+                <li><a href="#"><img class="logo" src="NotifWhite.png" alt="logo"></a></li>
+            </ul>
+        </nav>
+        
+        <a class="btn" href="Login.html"><button>Deconnexion</button></a>
+    </header>
+    <main>
+        <form id="formGen">
+
+        <div class="Name">
+            <label for="name"> Nom </label>
+          	<input id="nameipt" type="text" placeholder="Entrez votre nom" />
+            <label for="firstname"> Prénom </label>
+          	<input id="firstnameipt" type="text" placeholder="Entrez votre prénom" />
+        </div>
+        
+        <label id="habitationTitle" for="Habitation"> Habitation </label>
+        
+        <div class="habitat">
+            
+            <label for="street"> Rue   </label>
+          	<input id="streetipt" type="text" placeholder="Entrez votre rue" />
+            <label for="number"> Numéro </label>
+          	<input id="numbeript" type="number" placeholder="Entrez votre numéro" />
+        </div>    
+        
+        <div class="habitat2">    
+            <label for="city"> Ville </label>
+          	<input id="cityipt" type="text" placeholder="Entrez votre ville" />
+            <label for="CdPst"> Code Postale </label>
+          	<input id="CdPstipt" type="number" placeholder="Entrez votre code postale" />
+            
+        </div>
+        
+        <div class="Contact">
+            <label for="gmail"> Gmail </label>
+            <input id="gmailipt" type="text" placeholder="Entrez votre Gmail" />
+            <label for="telephone"> Téléphone </label>
+            <input id="telephoneipt" type="text" placeholder="Entrez votre telephone" />
+        </div>
+
+        </form>
+        <form id="val">
+        <div class="Contrat">
+            <label for="contrat"> Durée de contrat </label>
+            
+            <select id="typeContrat">
+                <option value="Annuel">Annuel</option>
+                <option value="Mensuel">Mensuel</option>
+              </select>
+        </div>          
+        </form>
+        <form>
+            <input type="submit" formaction="F-ManageClients.html" id="BtnConf" value="Nouveau client">  
+        </form>
+    </main>
+</body>

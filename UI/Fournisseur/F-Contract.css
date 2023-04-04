@@ -1,0 +1,250 @@
+body{
+    box-sizing: border-box;
+    margin-left:1.2%;
+    padding: 0;
+    width: 96%;
+    /* background-color: #24252A; */
+    background:url(./poigné.png) center/cover ;
+    
+}
+
+
+li, a, button{
+    font-family: Arial, Helvetica, sans-serif;
+    font-weight: 500;
+    font-size: 16px;
+    color: #edf0f1;
+    text-decoration: none;
+}
+
+header{
+    display: flex;
+    /* justify-content: space-between; */
+    justify-content:right;
+    align-items: center;
+    padding:30px 2.5%;
+    border: 2px solid rgba(19, 54, 193, 0.901);
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+    width: 97%;
+    margin: 0% auto;
+    max-height: 10px;
+    /* transform: translateY(10%); */
+    background: rgb(36, 106, 236);
+    box-shadow: rgba(0, 93, 254, 0.933) 3px 3px 14px 6px;
+}
+
+main{
+    background-color: rgba(13, 0, 255, 0.785) ;
+    padding:30px 5%;
+    border: 2px solid rgba(19, 54, 193, 0.901);
+    border-bottom-left-radius: 10px;
+    border-bottom-right-radius: 10px;
+    min-height: 700px;
+    color: azure;
+    width: 92%;
+    margin: 0% auto;
+    border-top: none;
+    box-shadow: rgba(0, 93, 254, 0.933) 3px 3px 14px 6px;
+}
+
+#title{
+    color: white;
+    font-size: x-large;
+    margin-right: auto;
+}
+
+.elem_toolbar{
+    /* border: 2px solid red; */
+    list-style: none;
+}
+
+.elem_toolbar li{
+    display:inline-block;
+    padding: 0px 10px;
+}
+
+.elem_toolbar li img{
+    transition: all 0.3s ease 0s;
+    /* border: solid 2px blue; */
+    height: 30px;
+    margin-top: 5px;
+}
+
+button{
+    padding:9px 25px;
+    border: 2px solid rgb(8, 9, 79);
+    border-radius: 50px;
+    cursor: pointer;
+    transition: all 0.3s ease 0s;
+    background-color: rgba(19, 73, 237, 0.927);
+    width: 100%;
+    
+}
+
+button:hover{
+    background-color:rgba(3, 114, 239, 0.927) ;
+    box-shadow: rgba(24, 66, 205, 0.933) 2px 2px 5px 3px;
+}
+
+/* ----------------------------------------- Page F-Contract.html ------------------------------------------- */
+
+#formGen{
+    /* text-align: center; */
+    margin-top: 100px;
+    margin-bottom: 00px;
+    margin-left: 400px;
+    margin-right: 400px;
+    background-color: violet;
+    background-color: rgba(13, 0, 255, 0) ;
+    height: 400px;
+    display: grid;
+}
+/* ----------------------------------------------------- */
+.Name{
+    display: flex;
+    justify-content: space-between;
+    height: 50%;
+}
+
+#nameipt{
+    border-radius: 10px;
+    border: 2px solid rgb(8, 9, 79);
+    background-color:rgba(3, 114, 239, 0.927) ;
+    color: white;
+}
+#nameipt::placeholder{color: white;}
+
+
+
+#firstnameipt{
+    border-radius: 10px;
+    border: 2px solid rgb(8, 9, 79);
+    background-color:rgba(3, 114, 239, 0.927) ;
+    color: white;
+}
+#firstnameipt::placeholder{color: white;}
+/* ------------------------------------------------------- */
+
+#habitationTitle{
+    margin-top: -10px;
+}
+
+.habitat{
+    margin-top: -20px;
+    display: flex;
+    justify-content: space-between;
+    height: 50%;
+}
+
+#streetipt{
+    border-radius: 10px;
+    border: 2px solid rgb(8, 9, 79);
+    background-color:rgba(3, 114, 239, 0.927) ;
+    height: 35px;
+    color: white;
+}
+#streetipt::placeholder{color: white;}
+
+#numbeript{
+    border-radius: 10px;
+    border: 2px solid rgb(8, 9, 79);
+    background-color:rgba(3, 114, 239, 0.927) ;
+    height: 35px;
+    color: white;
+}
+#numbeript::placeholder{color: white;}
+/* ------------------------------------------------------ */
+.habitat2{
+    display: flex;
+    justify-content: space-between;
+    height: 50%;
+}
+
+#cityipt{
+    border-radius: 10px;
+    border: 2px solid rgb(8, 9, 79);
+    background-color:rgba(3, 114, 239, 0.927) ;
+    height: 35px;
+    color: white;
+}
+#cityipt::placeholder{color: white;}
+
+#CdPstipt{
+    border-radius: 10px;
+    border: 2px solid rgb(8, 9, 79);
+    background-color:rgba(3, 114, 239, 0.927) ;
+    height: 35px;
+    color: white;
+}
+#CdPstipt::placeholder{color: white;}
+/* ----------------------------------------------------- */
+.Contact{
+    display: flex;
+    justify-content: space-between;
+    height: 50%;
+}
+
+#gmailipt{
+    border-radius: 10px;
+    border: 2px solid rgb(8, 9, 79);
+    background-color:rgba(3, 114, 239, 0.927) ;
+    height: 35px;
+    color: white;
+}
+#gmailipt::placeholder{color: white;}
+
+#telephoneipt{
+    border-radius: 10px;
+    border: 2px solid rgb(8, 9, 79);
+    background-color:rgba(3, 114, 239, 0.927) ;
+    height: 35px;
+    color: white;
+}
+#telephoneipt::placeholder{color: white;}
+
+label{
+    font-size: 22px;
+}
+
+#typeContrat{
+    border-radius: 10px;
+    border: 2px solid rgb(8, 9, 79);
+    background-color:rgba(3, 114, 239, 0.927) ;
+    height: 35px;
+    color: white;
+    width: 150px;
+}
+
+#val{
+    background-color: rgba(238, 130, 238, 0);
+    margin-left: 400px;
+    margin-right: 400px;
+    display: flex;
+    justify-content: flex-end;
+
+}
+
+#BtnConf{
+    margin:  auto; /*me permet d'aligner mon texte au centre de la grid*/
+    vertical-align: middle; /* permet de centrer verticalement un texte !attention! margin doit être auto pour tout les cotés*/
+    border: 2px solid rgb(8, 9, 79);
+    border-radius: 10px;
+    background-color: rgba(19, 73, 237, 0.927);
+    color: rgb(244, 225, 225);
+    /* padding: 4%; */
+    transition: 0.2s;
+    font-size: 110%; 
+    margin-left: 650px;
+    margin-right: 650px;
+    margin-top: 40px;
+    height: 70px;
+}
+
+/* lorsque le bouton est survolé */
+#BtnConf:hover{
+    cursor: pointer;
+    background-color:rgba(3, 114, 239, 0.927) ;
+    box-shadow: rgba(24, 66, 205, 0.933) 2px 2px 5px 3px;
+}
+
