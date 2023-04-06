@@ -87,3 +87,37 @@ button:hover{
     background-color: rgb(8, 168, 8);
     box-shadow: rgba(22, 132, 29, 0.933) 2px 2px 5px 3px;
 }
+
+.lstConso{
+    height: 600px;
+    background-color: white;
+}
+
+.btnConso{
+    display: flex;
+    margin-right:300px;
+    margin-left: 300px;
+    justify-content: space-evenly;
+    
+}
+
+#BtnAjt{
+    margin-top: 40px;
+    border: 2px solid rgb(7, 125, 25);
+    border-radius: 10px;
+    background-color: green;
+    color: rgb(244, 225, 225);
+    padding: 4%;
+    transition: 0.2s;
+    font-size: 110%; 
+    /* height: 20px ; */
+    padding: 20px;
+    width: 300px;
+
+}
+
+#BtnAjt:hover{
+    cursor: pointer;
+    background-color: rgb(8, 168, 8);
+    box-shadow: rgba(22, 132, 29, 0.933) 2px 2px 5px 3px;
+}

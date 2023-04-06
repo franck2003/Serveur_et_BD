@@ -87,3 +87,10 @@ button:hover{
     background-color: rgb(8, 168, 8);
     box-shadow: rgba(22, 132, 29, 0.933) 2px 2px 5px 3px;
 }
+
+/* --------------------------------- Page Facture.html --------------------------- */
+
+.facture{
+    height: 600px;
+    background-color: white;
+}

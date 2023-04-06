@@ -87,3 +87,39 @@ button:hover{
     background-color: rgb(8, 168, 8);
     box-shadow: rgba(22, 132, 29, 0.933) 2px 2px 5px 3px;
 }
+
+/* ---------------------------- Facturation.html ---------------------------- */
+
+#FormFact{
+    display: grid;
+   
+}
+
+.boutonOpt{
+    display: grid;
+    width: 0%;
+    /* margin-left: 600px; */
+    /* margin-right: 600px;     */
+    margin-left:38% ;
+}
+
+#BtnOpt{
+    margin-top: 100px;
+    border: 2px solid rgb(7, 125, 25);
+    border-radius: 10px;
+    background-color: green;
+    color: rgb(244, 225, 225);
+    padding: 4%;
+    transition: 0.2s;
+    font-size: 110%; 
+    height: 50% ;
+    width: 150%;
+    padding: 20px;
+
+}
+
+#BtnOpt:hover{
+    cursor: pointer;
+    background-color: rgb(8, 168, 8);
+    box-shadow: rgba(22, 132, 29, 0.933) 2px 2px 5px 3px;
+}

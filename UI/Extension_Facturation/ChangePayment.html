@@ -4,14 +4,14 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title> Gestion Sous Portefeuille</title>
-    <link rel="stylesheet" href="ManageSubwallet.css">
+    <title> Mode de Paiement</title>
+    <link rel="stylesheet" href="ChangePayment.css">
     <link rel="shortcut icon" href="wallet-icon-png-5.png">
 
 </head>
 <body>
     <header>
-        <h4 id="title"> Gestion Sous Portefeuille </h4>
+        <h4 id="title"> Mode de Paiement </h4>
         <nav>
             <ul class="elem_toolbar">
                 <!-- <li><a href="#">services</a></li> -->
@@ -23,7 +23,23 @@
         <a class="btn" href="Login.html"><button>Deconnexion</button></a>
     </header>
     <main>
-         
+        <div class="Paiement">
+        <form >
+
+
+            <div class="Mensuel">
+            <label for="Paiement Mensuel"> Paiement Mensuel </label>
+            <input type="radio" name="typeOfpaiement" id="Paiement Mensuel" checked />
+            </div>
+
+            <div class="Domiciliation">
+            <label for="Domiciliation"> Domiciliation </label>
+            <input type="radio" name="typeOfpaiement" id="Domiciliation" />
+          </div>
+          
+        </form>
+        </div>
+        <input type="submit" formaction="Facturation.html" id="BtnOpt" value="Valider">
     </main>
 </body>
 </html>
