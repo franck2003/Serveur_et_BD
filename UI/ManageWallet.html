@@ -5,7 +5,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Gestion du portefeuille</title>
-    <link rel="stylesheet" href="Style3.css">
+    <link rel="stylesheet" href="ManageWallet.css">
     <link rel="shortcut icon" href="wallet-icon-png-5.png">
 
 </head>
@@ -22,15 +22,63 @@
         
         <a class="btn" href="Login.html"><button>Deconnexion</button></a>
     </header>
+
     <main>
-        <form id="FormMW">
+    
+    <form id="FormMW">    
+        <div class="toRemove">
             <div class="boutonOpt">
-                <input type="submit" formaction="#" id="BtnOpt" value="Supprimer portefeuille"> 
+                <button type="submit" onclick="openPopup(event)" id="BtnOpt" > Supprimer </button> 
                 <input type="submit" formaction="MyConsumption.html" id="BtnOpt" value="Ma consommation"> 
-                <input type="submit" formaction="#" id="BtnOpt" value="Modifier Portefeuille"> 
+                <input type="submit" formaction="ModifieWallet.html" id="BtnOpt" value="Modifier Portefeuille"> 
                 <input type="submit" formaction="/Extension_Gestion_de_Portfeuille_Agrégé/Subwallet.html" id="BtnOpt" value="Mes Sous-Portefeuille"> 
             </div>
-        </form>    
+
+            <!-- Creation de la pop-up -->
+            <div class="pop-up" id="pop-up">
+                <h2>Voulez-vous vraiment supprimer votre Portefeuille</h2>
+                <div class="bouton">
+                <button type="button" id="bttn"> Valider </button>
+                <!-- bouton permettant de fermer la pop-up -->
+                <button type="button" id="bttn"onclick="closePopup()"> Annuler </button> 
+                </div>
+            </div>
+        </div>
+    </form>
+        
     </main>
+
+    
+    <!-- Interraction de la pop-up avec le bouton supprimer -->
+
+    <script>
+
+        let popup = document.getElementById("pop-up");
+        
+        // methode permettant d'ouvrir la pop-up lier au bouton supprimer 
+        function openPopup(event){
+            event.preventDefault(); 
+            popup.classList.add("open-popup");
+        }
+        
+        // methode permettant de fermer la pop-up lier au bouton annuler 
+        function closePopup(){
+            popup.classList.remove("open-popup");
+        }
+        
+        let validateBtn = document.getElementById("bttn");
+        
+        // lorsque l'on supprime le portefeuille, on ne doit plus avoir accès aux option de gestion d'un portefeuille
+        validateBtn.addEventListener("click", function() {
+            let formMW = document.querySelector(".toRemove");
+            formMW.parentNode.remove(formMW);
+        
+            let body = document.querySelector(".toRemove");
+            body.innerHTML = "<h1>Aucun portefeuille</h1>";
+            body.style.textAlign = "center";
+        });
+        
+    </script>
+
 </body>
 </html>

@@ -400,7 +400,7 @@ button:hover{
 }
 
 
-/* --------------------------------------- Page ManageWallet.html +  ShowWallet.html ------------------------------------------- */
+/* --------------------------------------- Page ManageWallet.html  ------------------------------------------- */
 
 #formMW{
     display: grid;
@@ -517,4 +517,148 @@ button:hover{
     box-shadow: rgba(22, 132, 29, 0.933) 3px 3px 5px 3px;
 }
 
-/* --------------------------------------- Page ShowSuppliers.html + ShowHabitations.html ------------------------------------ */
+/* ---------------------------------------Page ShowWallet.html + ModifieWallet.html -------------------------------------------------- */
+
+
+#formSW{
+    display: grid;
+   
+}
+
+.boutonSW{
+    margin-top: 7%;
+    display: grid;
+    width: 0%;
+    /* margin-left: 600px; */
+    /* margin-right: 600px;     */
+    margin-left: 38% ;
+}
+
+#BtnSW{
+    margin-top: 100px;
+    border: 2px solid rgb(7, 125, 25);
+    border-radius: 10px;
+    background-color: green;
+    color: rgb(244, 225, 225);
+    padding: 4%;
+    transition: 0.2s;
+    font-size: 110%; 
+    /* height: 20px ; */
+    padding: 20px;
+    width: 150%;
+
+}
+
+#BtnSW:hover{
+    cursor: pointer;
+    background-color: rgb(8, 168, 8);
+    box-shadow: rgba(22, 132, 29, 0.933) 2px 2px 5px 3px;
+}
+
+
+/* --------------------------------------- Page ShowSuppliers.html  --------------------------------------------- */
+
+.suppliers{
+    text-align: center;  
+    width: 50%;  
+    margin-top: 10%;
+    margin: auto auto;
+    margin-top: 2%;
+    border: 2px solid ;
+    background: rgb(2, 86, 2);
+    box-shadow: rgba(22, 132, 29, 0.933) 2px 2px 5px 3px;
+    border: 2px solid rgb(26, 255, 0);
+    border-radius: 20px;
+}
+
+#suppForm{
+    display: grid;
+    height: 600px;
+    align-content: space-evenly;
+    font-size: larger;
+   
+}
+
+h3{
+    width: 50%;
+    margin-left: 25%;  
+    border-radius: 15px;
+    color :rgb(4, 251, 0);
+    box-shadow: rgba(13, 167, 23, 0.933) 2px 2px 5px 3px;
+}
+
+
+/* ------------------------------------------- ShowHabitations.html  + ModifieHabitation.html ----------------------*/
+
+#hab{
+    width: 50%;
+    margin-left: 25%;  
+    border-radius: 15px;
+    color :rgb(4, 251, 0);
+    box-shadow: rgba(13, 167, 23, 0.933) 2px 2px 5px 3px;
+}
+
+.Showhabitat{
+    text-align: center;  
+    width: 50%;  
+    margin: auto auto;
+    margin-top: 2%;
+    border: 2px solid ;
+    background: rgb(2, 86, 2);
+    box-shadow: rgba(22, 132, 29, 0.933) 2px 2px 5px 3px;
+    border: 2px solid rgb(26, 255, 0);
+    border-radius: 20px;
+}
+
+#HabForm{
+    display: grid;
+    height: 600px;
+    align-content: space-evenly;
+    font-size: larger;
+    margin-bottom: 2%;
+}
+
+#BtnMdf{
+    margin-top: 10px;
+    margin-bottom: 10px;
+    border: 2px solid rgb(7, 125, 25);
+    border-radius: 10px;
+    background-color: green;
+    color: rgb(244, 225, 225);
+    padding: 2%;
+    transition: 0.2s;
+    font-size: 110%; 
+    width: 30%;
+    
+
+}
+
+#BtnMdf:hover{
+    cursor: pointer;
+    background-color: rgb(8, 168, 8);
+    box-shadow: rgba(22, 132, 29, 0.933) 2px 2px 5px 3px;
+}
+
+/* --------------------------------------- Notifications.html -------------------------------------- */
+
+#TabNotif{
+    margin: auto auto;
+    background-color: green;
+    border-radius: 10px;
+    border: rgb(32, 87, 32);
+}
+
+th{
+    height: 40px;
+    font-size: larger;
+    border: 7px  solid  rgb(5, 255, 5);
+    border-radius: 10px;
+}
+
+td{
+    border: 2px  solid  rgb(5, 255, 5);
+    border-radius: 5px;
+    text-align: center;
+    height: 30px;
+}
+

@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Modifier Habtation</title>
+    <link rel="stylesheet" href="Style3.css">
+    <link rel="shortcut icon" href="wallet-icon-png-5.png">
+</head>
+<body>
+    <header>
+        <h4 id="title"> Modifier Habitation </h4>
+        <nav>
+            <ul class="elem_toolbar">
+                
+                <li><a href="#"><img class="logo" src="SettingsIcon.png" alt="logo"></a></li>
+                <li><a href="#"><img class="logo" src="NotifWhite.png" alt="logo"></a></li>
+            </ul>
+        </nav>
+        
+        <a class="btn" href="Login.html"><button>Deconnexion</button></a>
+    </header>
+    <main>
+        <div class="Showhabitat">
+            <form id="HabForm">
+                <h1>Habitation</h1>
+                <div>
+                    <h4 id="hab">ID: </h4>
+                    <span id="identifiant"> objet ID </span>
+                </div>
+                <div>
+                    <h4 id="hab">Rue : </h4>
+                    <span> objet Rue </span>
+                </div>
+                <div>
+                    <h4 id="hab">Ville : </h4>
+                    <span> objet ville </span>
+                </div>
+                <div>
+                    <h4 id="hab">Numéro : </h4>
+                    <span> objet numero </span>
+                </div>
+                <div>
+                    <h4 id="hab">Code Postale : </h4>
+                    <span> objet code postale </span>
+                    
+                    
+                </div>
+
+            </form>
+            <input type="submit"  id="BtnMdf" value="Modifier" onclick="transformSpanToInputs()"> 
+        </div>
+    </main>
+
+<!-- --------------------------------code javascript ----------------------------- -->
+
+    <script>
+        
+        function transformSpanToInputs() {
+            // Récupérer tous les éléments <span>
+            var spans = document.querySelectorAll("span");
+            var inputs = [];
+
+             // Parcourir tous les éléments <span> et remplacer chaque élément par un <input> avec la même valeur
+            for (var i = 0; i < spans.length; i++) {
+                var span = spans[i];
+                 // Ajouter l'attribut "disabled" à l'élément span identifiant
+                if (span.id === "identifiant") {
+                span.setAttribute("disabled", "true");
+                continue;
+                }
+                var input = document.createElement("input");
+                input.type = "text";
+                input.value = span.innerHTML;
+                span.parentNode.replaceChild(input, span);
+                inputs.push(input);
+             }
+
+            // Mettre le focus sur le premier <input> créé
+            if (inputs.length > 0) {
+            inputs[0].focus();
+            }
+
+            // Changer le texte du bouton "Modifier" en "Envoyer"
+            var btn = document.getElementById("BtnMdf");
+            btn.setAttribute("value", "Envoyer");
+        }
+
+        function sendData() {
+            // Récupérer les valeurs des inputs
+            var inputs = document.querySelectorAll("input");
+            var values = [];
+             for (var i = 0; i < inputs.length; i++) {
+                values.push(inputs[i].value);
+            }
+
+            // Envoyer les informations à votre backend
+            // Exemple avec fetch et JSON :
+            fetch('votre-url-de-backend', {
+            method: 'POST',
+            headers: {
+            'Content-Type': 'application/json'
+            },
+            body: JSON.stringify(values)
+            }).then(response => {
+            // Traiter la réponse de votre backend
+             });
+        }
+
+        var btn = document.getElementById("BtnMdf");
+        btn.addEventListener("click", function() {
+        if (btn.value === "Modifier") {
+        transformHeadersToInputs();
+            } else {
+        sendData();
+            }
+        });
+
+    </script>
+
+<style>
+    input[type="text"] {
+        border-radius: 10px;
+        background-color: rgba(52, 209, 52, 0.823) ;    
+    }
+</style>
+<!-- ---------------------------------------------------------------------- -->
+
+</body>
+</html>
