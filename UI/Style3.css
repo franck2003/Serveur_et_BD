@@ -639,7 +639,7 @@ h3{
     box-shadow: rgba(22, 132, 29, 0.933) 2px 2px 5px 3px;
 }
 
-/* --------------------------------------- Notifications.html -------------------------------------- */
+/* --------------------------------------- Notifications.html + ConsuElec + water + gaz.html -------------------------------------- */
 
 #TabNotif{
     margin: auto auto;
@@ -647,6 +647,14 @@ h3{
     border-radius: 10px;
     border: rgb(32, 87, 32);
 }
+
+#TabConso{
+    margin: auto auto;
+    background-color: green;
+    border-radius: 10px;
+    border: rgb(32, 87, 32);
+}
+
 
 th{
     height: 40px;

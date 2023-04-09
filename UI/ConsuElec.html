@@ -22,15 +22,48 @@
         <a class="btn" href="Login.html"><button>Deconnexion</button></a>
     </header>
     <main>
-        <div class="lstConso">
+        <form>
+        <div>
+        	<table id="TabConso"border=" 3" width="80%">
+          	    <thead id="tête">
+                    <tr>
+              	        <th>Date</th>
+              	        <th>consommation</th>              	        
+                    </tr>
+          	    </thead>
 
-        </div>
+          	    <tbody id="corp">
+                    <tr> <!-- 1ere ligne -->
+              	        <td id="notifDate"> <span> objet date </span> </td> <!-- 1ere colone-->
+              	        <td> <button> <span> objet conso 1 </span> </button> <!-- 2eme colone-->
+                    </tr>
+                    <tr>
+                        <td id="notifDate"> <span> objet date 2 </span> </td>
+              	        <td> <button> <span> objet conso 2 </span> </button> </td>              	        
+                    </tr>
+                    <tr>
+                        <td id="notifDate"> <span> objet date 3 </span> </td>
+              	        <td> <button> <span> objet conso 3 </span> </button> </td>              	        
+                    </tr>
+          	    </tbody>
+        	</table>
+      	</div>
+        </form>
+
         <form>
         <div class="btnConso">
                 <input type="submit" formaction="CountElec.html" id="BtnAjt" value="Ajouter"> 
                 <input type="submit" formaction="#" id="BtnAjt" value="Exporter"> 
         </div>
         </form>
-    </main>    
+    </main> 
+    
+    <script>
+        // créer une méthode en javascript qui rend le tableau dynamique, cad qui se met à jour tt les X temps 
+        // pour afficher à a chaque fois une nouvelle consommation 
+    </script>
+    
+    
+
 </body>
 </html>
