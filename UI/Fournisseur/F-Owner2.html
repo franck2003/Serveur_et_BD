@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Propriétaire</title>
+    <link rel="stylesheet" href="F-Owner2.css">
+    <link rel="shortcut icon" href="wallet-icon-png-5.png">
+</head>
+<body>
+    <header>
+        <h4 id="title"> Propriétaire </h4>
+        <nav>
+            <ul class="elem_toolbar">
+                <!-- <li><a href="#">services</a></li> -->
+                <li><a href="#"><img class="logo" src="SettingsIcon.png" alt="logo"></a></li>
+                <li><a href="#"><img class="logo" src="NotifWhite.png" alt="logo"></a></li>
+            </ul>
+        </nav>
+        
+        <a class="btn" href="Login.html"><button>Deconnexion</button></a>
+    </header>
+    <main>
+        <div class="ShowOwner">
+            <form id="OwnerForm">
+                <h1>Propriétaire</h1>
+                <div>
+                    <h4 id="Owner"> Nom: </h4>
+                    <span> obket Nom </span>
+                </div>
+                <div>
+                    <h4 id="Owner"> Prénom : </h4>
+                    <span> objet Prénom </span>
+                </div>
+                <div>
+                    <h4 id="Owner">Téléphone : </h4>
+                    <span> objet Tel </span>
+                </div>
+                <div>
+                    <h4 id="Owner">Adresse mail : </h4>
+                    <span> objet Gmail </span>
+                </div>
+                
+            </form>
+            <button type="submit"  id="BtnMdf" value="Dissocier" onclick="transformSpanToInputs()"> Dissocier</button>
+            <button type="submit" id="BtnMdf" value="Associer" onclick="transformInputsToSpan()"> Associer</button>
+        </div>
+        <form>
+        <button id="retour" formaction="F-Owner.html"> retour  </button>
+        </form>
+    </main>
+
+    <script>
+        
+        function transformSpanToInputs() {
+        // Récupérer tous les éléments <span>
+            var spans = document.querySelectorAll("span");
+            var inputs = [];
+
+            // Parcourir tous les éléments <span> et remplacer chaque élément par un <input> avec la même valeur
+            for (var i = 0; i < spans.length; i++) {
+            var span = spans[i];
+            var input = document.createElement("input");
+            input.type = "text";
+            span.parentNode.replaceChild(input, span);
+            inputs.push(input);
+            }  
+        }
+
+        function transformInputsToSpan() {
+            // Récupérer tous les éléments <input>
+            var inputs = document.querySelectorAll("input");
+
+            // Parcourir tous les éléments <input> et remplacer chaque élément par un <span> avec la même valeur
+            for (var i = 0; i < inputs.length; i++) {
+            var input = inputs[i];
+            var span = document.createElement("span");
+            span.innerHTML = input.value;
+            input.parentNode.replaceChild(span, input);
+            }
+        }
+
+        // va soummettre le formulaire et envoyer les données à la base de données
+        function submitForm() {
+            // Récupérer les valeurs des inputs
+            var inputs = document.querySelectorAll("input");
+            var values = [];
+            for (var i = 0; i < inputs.length; i++) {
+            values.push(inputs[i].value);
+        }
+
+        // Envoyer les informations à votre backend
+        // Exemple avec fetch et JSON :
+        fetch('votre-url-de-backend', {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json'
+            },
+            body: JSON.stringify(values)
+            }).then(response => {
+            // Traiter la réponse de votre backend
+        });
+    }
+
+    </script>
+
+<style>
+    input[type="text"] {
+        border-radius: 10px;
+        background-color: rgba(51, 53, 177, 0.823) ;    
+    }
+</style>
+
+</body>
+</html>

@@ -639,6 +639,64 @@ h3{
     box-shadow: rgba(22, 132, 29, 0.933) 2px 2px 5px 3px;
 }
 
+/* --------------------------------------------------------- ModifieSuppliers.html --------------------------------------------- */
+
+#Modsupp{
+    width: 50%;
+    margin-left: 25%;  
+    border-radius: 15px;
+    color :rgb(4, 251, 0);
+    box-shadow: rgba(13, 167, 23, 0.933) 2px 2px 5px 3px;
+}
+
+.Modsuppliers{
+    text-align: center;  
+    width: 50%;  
+    margin: auto auto;
+    margin-top: 2%;
+    border: 2px solid ;
+    background: rgb(2, 86, 2);
+    box-shadow: rgba(22, 132, 29, 0.933) 2px 2px 5px 3px;
+    border: 2px solid rgb(26, 255, 0);
+    border-radius: 20px;
+}
+
+#SupModForm{
+    display: grid;
+    height: 600%;
+    align-content: space-evenly;
+    font-size: larger;
+    margin-bottom: 2%;
+}
+
+
+select {
+    width: 40%;
+    margin: 15px;
+    padding: 0.2em;
+    border: 2px solid #00ff15;
+    border-radius: 10px;
+    font-size: 1em;
+    background-color: #00ff22;
+    color: #333;
+  }
+  
+  option {
+    background-color: white;
+    padding: 0.2em;
+  }
+
+button.ConfButton {
+    background-color: green;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    width: 40%;
+  }
+  
+
 /* --------------------------------------- Notifications.html + ConsuElec + water + gaz.html -------------------------------------- */
 
 #TabNotif{

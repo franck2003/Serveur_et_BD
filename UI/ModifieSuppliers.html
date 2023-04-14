@@ -5,7 +5,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Modifier Points de Fournitures</title>
-    <link rel="stylesheet" href="WindowGeneral.css">
+    <link rel="stylesheet" href="Style3.css">
     <link rel="shortcut icon" href="wallet-icon-png-5.png">
 </head>
 <body>
@@ -22,7 +22,112 @@
         <a class="btn" href="Login.html"><button>Deconnexion</button></a>
     </header>
     <main>
-
+        <div class="Modsuppliers">
+            <form id="SupModForm">
+                <h1>Points de Fourniture</h1>
+                <div>
+                    <h4 id="Modsupp">Electricité: </h4>
+                    <span > objet Electricté </span>
+                    <br><br>
+                    <button id="BtnMdf" onclick=transformSpanToSelect()> Modifier </button>
+                </div>
+                <div>
+                    <h4 id="Modsupp">Eau: </h4>
+                    <span > objet Eau </span>
+                    <br><br>
+                    <button id="BtnMdf" onclick=transformSpanToSelect()> Modifier </button>
+                </div>
+                <div>
+                    <h4 id="Modsupp">Gaz: </h4>
+                    <span > objet Gaz </span>
+                    <br><br>
+                    <button id="BtnMdf" onclick=transformSpanToSelect()> Modifier </button>
+                </div>
+            </form>
+        </div>
     </main>
+
+    <script>
+
+    // méthode tiré de chatGpt
+    function transformSpanToSelect() {
+    // Récupérer le bouton cliqué et le span correspondant
+    const button = event.target;
+    const span = button.previousElementSibling;
+
+    // Créer un nouvel élément select et l'ajouter à la place du span
+    const select = document.createElement("select");
+
+    // Ajouter des options à la liste déroulante en utilisant le texte du span comme valeur et texte de l'option
+    const options = span.textContent.trim().split(" ");
+    options.forEach((option) => {
+        const opt = document.createElement("option");
+        opt.value = option;
+        opt.textContent = option;
+        select.appendChild(opt);
+    });
+
+    // Ajouter de nouvelles options à la liste déroulante
+    const newOption = document.createElement("option");
+    newOption.value = " ";
+    newOption.textContent = "Aucun";
+    select.appendChild(newOption);
+    
+    const newOption1 = document.createElement("option");
+    newOption1.value = "Luminus";
+    newOption1.textContent = "Luminus";
+    select.appendChild(newOption1);
+
+    const newOption2 = document.createElement("option");
+    newOption2.value = "Electrabel";
+    newOption2.textContent = "Electrabel";
+    select.appendChild(newOption2);
+
+
+    // Remplacer le span par le select dans le DOM
+    span.parentNode.replaceChild(select, span);
+
+    // Ajouter un bouton "Valider" pour enregistrer la modification
+    const ConfButton = document.createElement("button");
+    ConfButton.textContent = "Confirmer";
+    button.parentNode.replaceChild(ConfButton, button);
+
+    // Ajouter un événement "click" pour le bouton "Valider"
+    ConfButton.addEventListener("click", () => {
+        // Récupérer la nouvelle valeur sélectionnée dans la liste déroulante
+        const selectedValue = select.value;
+
+        // Créer un nouveau span avec la nouvelle valeur et remplacer le select dans le DOM
+        const newSpan = document.createElement("span");
+        newSpan.textContent = selectedValue;
+        select.parentNode.replaceChild(newSpan, select);
+
+        // Ajouter un nouveau bouton "Modifier" pour permettre de modifier à nouveau la valeur
+        const editButton = document.createElement("button");
+        editButton.textContent = "Modifier";
+        ConfButton.parentNode.replaceChild(editButton, ConfButton);
+
+        // Ajouter un événement "click" pour le nouveau bouton "Modifier"
+        editButton.addEventListener("click", transformSpanToSelect);
+    });
+}
+
+    </script>
+
+    <style>
+        button{
+            margin-top: 10px;
+        margin-bottom: 10px;
+        border: 2px solid rgb(7, 125, 25);
+        border-radius: 10px;
+        background-color: green;
+        color: rgb(244, 225, 225);
+        padding: 2%;
+        transition: 0.2s;
+        font-size: 110%; 
+        width: 30%;
+    }
+    </style>
+
 </body>
 </html>

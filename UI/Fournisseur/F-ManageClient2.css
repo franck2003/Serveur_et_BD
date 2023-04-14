@@ -1,4 +1,3 @@
-
 body{
     box-sizing: border-box;
     margin-left:1.2%;
@@ -88,11 +87,22 @@ button:hover{
     box-shadow: rgba(24, 66, 205, 0.933) 2px 2px 5px 3px;
 }
 
+#formGC{
+    display: grid;
+   
+}
 
+.boutonGC{
+    margin-top: 7%;
+    display: grid;
+    width: 0%;
+    /* margin-left: 600px; */
+    /* margin-right: 600px;     */
+    margin-left: 40% ;
+}
 
-#BtnNC{
-    margin-left: 42.5%;
-    margin-top: 40px;
+#BtnGC{
+    margin-top: 100px;
     border: 2px solid rgb(8, 9, 79);
     border-radius: 10px;
     background-color: rgba(19, 73, 237, 0.927);
@@ -102,34 +112,33 @@ button:hover{
     font-size: 110%; 
     /* height: 20px ; */
     padding: 20px;
-    width: 200px;
+    width: 150%;
 
 }
 
-#BtnNC:hover{
+#BtnGC:hover{
     cursor: pointer;
     background-color:rgba(3, 114, 239, 0.927) ;
     box-shadow: rgba(24, 66, 205, 0.933) 2px 2px 5px 3px;
 }
 
-.clients{
-    margin: auto 40%;
+#retour{
+    padding:9px 25px;
+    border: 2px solid rgb(8, 9, 79);
+    border-radius: 50px;
+    cursor: pointer;
+    transition: all 0.3s ease 0s;
+    background-color: rgba(19, 73, 237, 0.927);
+    width: 10%;   
+    display: block;
+    position: absolute;
+    top: 93%;
+
+
+    
 }
 
-#recherche{
-    width: 100%;
-    height: 30px;
-    border-radius: 0px;
-    border: 4px solid rgb(8, 9, 79);
-}
-
-#Suggestions{
-    width: 103%;
-    color: white;
-    font-size: large;
-    font-family: Arial, Helvetica, sans-serif;
-    background-color:rgba(3, 114, 239, 0.927);
-    border-radius: 0px;
-    border: 2px solid rgb(8, 9, 79); 
-
+#retour:hover{
+    background-color:rgba(3, 114, 239, 0.927) ;
+    box-shadow: rgba(24, 66, 205, 0.933) 2px 2px 5px 3px;
 }

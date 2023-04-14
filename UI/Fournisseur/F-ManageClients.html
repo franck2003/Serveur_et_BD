@@ -23,11 +23,58 @@
     </header>
     <main>
         <div class="clients">
-            
+            <input class="input" id="recherche" type="text" placeholder="Rechercher Adresse Client">
+            <div id="Suggestions"></div>
         </div>
         <form>
         <input type="submit" formaction="F-Contract.html" id="BtnNC" value="Nouveau Client"> 
         </form>
     </main>
+
+    <script>
+
+        const persons = 
+        [ 
+        {name: "David", address: "123 Main St."},
+        {name: "Daniel", address: "456 Oak Ave."},
+        {name: "Denis", address: "789 Elm St."},
+        {name: "Astrid", address: "321 Maple St."},
+        {name: "Annabelle", address: "654 Cedar Ave."},
+        {name: "Valentin", address: "987 Pine St."},
+        {name: "Omar", address: "654 Cherry Ave."}
+        ];
+
+        const recherche = document.getElementById('recherche');
+        recherche.addEventListener("keyup", function(){
+            const input = recherche.value;  // valeur entrée
+            
+            const result = persons.filter(person => person.address.toLocaleLowerCase().includes(input.toLocaleLowerCase()));
+            console.log(result);
+
+            let suggestion = '';
+
+            if(input!=''){
+            result.forEach(resultPerson => 
+            suggestion +=`
+                <div class="suggestion">${resultPerson.address}</div>
+                `
+                )
+            }
+            document.getElementById('Suggestions').innerHTML = suggestion;
+            
+            const suggestionElements = document.querySelectorAll('.suggestion');
+            suggestionElements.forEach(suggestionElement => {
+                suggestionElement.addEventListener('click', () => {
+                    recherche.value = suggestionElement.innerText;
+                    document.getElementById('suggestions').innerHTML = '';
+                    // effectuer la recherche en utilisant la valeur de la suggestion cliquée
+                });
+            });
+
+
+        })
+
+    </script>
+
 </body>
 </html>

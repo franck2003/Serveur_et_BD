@@ -89,47 +89,51 @@ button:hover{
 }
 
 
-
-#BtnNC{
-    margin-left: 42.5%;
-    margin-top: 40px;
-    border: 2px solid rgb(8, 9, 79);
-    border-radius: 10px;
-    background-color: rgba(19, 73, 237, 0.927);
-    color: rgb(244, 225, 225);
-    padding: 4%;
-    transition: 0.2s;
-    font-size: 110%; 
-    /* height: 20px ; */
-    padding: 20px;
-    width: 200px;
-
-}
-
-#BtnNC:hover{
-    cursor: pointer;
-    background-color:rgba(3, 114, 239, 0.927) ;
+#hab{
+    width: 50%;
+    margin-left: 25%;  
+    border-radius: 15px;
+    color :rgba(19, 73, 237, 0.927);
     box-shadow: rgba(24, 66, 205, 0.933) 2px 2px 5px 3px;
 }
 
-.clients{
-    margin: auto 40%;
+.Showhabitat{
+    text-align: center;  
+    width: 50%;  
+    margin: auto auto;
+    margin-top: 2%;
+    border: 2px solid ;
+    background-color:rgb(8, 9, 79);
+    box-shadow: rgba(24, 66, 205, 0.933) 2px 2px 5px 3px;
+    border: 2px solid rgb(8, 9, 79);
+    border-radius: 20px;
 }
 
-#recherche{
-    width: 100%;
-    height: 30px;
-    border-radius: 0px;
-    border: 4px solid rgb(8, 9, 79);
+#HabForm{
+    display: grid;
+    height: 600px;
+    align-content: space-evenly;
+    font-size: larger;
+    margin-bottom: 2%;
 }
 
-#Suggestions{
-    width: 103%;
-    color: white;
-    font-size: large;
-    font-family: Arial, Helvetica, sans-serif;
-    background-color:rgba(3, 114, 239, 0.927);
-    border-radius: 0px;
-    border: 2px solid rgb(8, 9, 79); 
+#retour{
+    padding:9px 25px;
+    border: 2px solid rgb(8, 9, 79);
+    border-radius: 50px;
+    cursor: pointer;
+    transition: all 0.3s ease 0s;
+    background-color: rgba(19, 73, 237, 0.927);
+    width: 10%;   
+    display: block;
+    position: absolute;
+    top: 100%;
 
+
+    
+}
+
+#retour:hover{
+    background-color:rgba(3, 114, 239, 0.927) ;
+    box-shadow: rgba(24, 66, 205, 0.933) 2px 2px 5px 3px;
 }

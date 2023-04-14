@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Compteurs</title>
+    <link rel="stylesheet" href="F-Counters.css">
+    <link rel="shortcut icon" href="wallet-icon-png-5.png">
+</head>
+<body>
+    <header>
+        <h4 id="title"> Compteurs </h4>
+        <nav>
+            <ul class="elem_toolbar">
+                <!-- <li><a href="#">services</a></li> -->
+                <li><a href="#"><img class="logo" src="SettingsIcon.png" alt="logo"></a></li>
+                <li><a href="#"><img class="logo" src="NotifWhite.png" alt="logo"></a></li>
+            </ul>
+        </nav>
+        
+        <a class="btn" href="Login.html"><button>Deconnexion</button></a>
+    </header>
+    <main>
+        <div>
+        	<table id="TabCounters"border=" 3" width="80%">
+          	    <thead id="tête">
+                    <tr>
+              	        <th>Type</th>
+              	        <th>Compteur</th>              	        
+                    </tr>
+          	    </thead>
+
+          	    <tbody id="corp">
+                    <tr> <!-- 1ere ligne -->
+              	        <td> <span> objet type : eau </span> </td> <!-- 1ere colone-->
+              	        <td> <button id="c"> <span> objet compteur 1 </span> </button> <!-- 2eme colone-->
+                    </tr>
+                    <tr>
+                        <td> <span> objet type : gaz </span> </td>
+              	        <td> <button id="c"> <span> objet compteur 2 </span> </button> </td>              	        
+                    </tr>
+                    <tr>
+                        <td> <span> objet type 3 </span> </td>
+              	        <td> <button id="c"> <span> objet compteur 3 </span> </button> </td>              	        
+                    </tr>
+          	    </tbody>
+        	</table>
+      	</div>
+        <form>
+          <button id="retour" formaction="F-Habitation.html"> retour  </button>
+        </form>
+    </main>
+</body>
+</html>

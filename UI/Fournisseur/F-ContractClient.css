@@ -89,47 +89,76 @@ button:hover{
 }
 
 
+/* --------------------------------------- Notifications.html -------------------------------------- */
 
-#BtnNC{
-    margin-left: 42.5%;
-    margin-top: 40px;
-    border: 2px solid rgb(8, 9, 79);
+#TabContrat{
+    margin: auto auto;
+    background-color:rgb(9, 12, 173);
     border-radius: 10px;
-    background-color: rgba(19, 73, 237, 0.927);
-    color: rgb(244, 225, 225);
-    padding: 4%;
-    transition: 0.2s;
-    font-size: 110%; 
-    /* height: 20px ; */
-    padding: 20px;
-    width: 200px;
+    border:rgba(3, 114, 239, 0.927) ;
+    width: 40%;
 
 }
 
-#BtnNC:hover{
+th{
+    height: 80px;
+    font-size: larger;
+    border: 7px solid rgba(3, 114, 239, 0.927) ;
+    border-radius: 10px;
+}
+
+td{
+    border: 2px solid rgba(3, 114, 239, 0.927) ;
+    border-radius: 5px;
+    text-align: center;
+    height: 100px;
+}
+
+#Contratbutton{
+    height: 100px;
+    border-radius: 5px;
+}
+
+#retour{
+    padding:9px 25px;
+    border: 2px solid rgb(8, 9, 79);
+    border-radius: 50px;
     cursor: pointer;
+    transition: all 0.3s ease 0s;
+    background-color: rgba(19, 73, 237, 0.927);
+    width: 10%;   
+    display: block;
+    position: absolute;
+    top: 93%;
+
+
+    
+}
+
+#retour:hover{
     background-color:rgba(3, 114, 239, 0.927) ;
     box-shadow: rgba(24, 66, 205, 0.933) 2px 2px 5px 3px;
 }
 
-.clients{
-    margin: auto 40%;
+#BtnConf{
+    margin:  auto; /*me permet d'aligner mon texte au centre de la grid*/
+    vertical-align: middle; /* permet de centrer verticalement un texte !attention! margin doit être auto pour tout les cotés*/
+    border: 2px solid rgb(8, 9, 79);
+    border-radius: 10px;
+    background-color: rgba(19, 73, 237, 0.927);
+    color: rgb(244, 225, 225);
+    /* padding: 4%; */
+    transition: 0.2s;
+    font-size: 110%; 
+    margin-left: 630px;
+    margin-right: 600px;
+    margin-top: 40px;
+    height: 70px;
 }
 
-#recherche{
-    width: 100%;
-    height: 30px;
-    border-radius: 0px;
-    border: 4px solid rgb(8, 9, 79);
-}
-
-#Suggestions{
-    width: 103%;
-    color: white;
-    font-size: large;
-    font-family: Arial, Helvetica, sans-serif;
-    background-color:rgba(3, 114, 239, 0.927);
-    border-radius: 0px;
-    border: 2px solid rgb(8, 9, 79); 
-
+/* lorsque le bouton est survolé */
+#BtnConf:hover{
+    cursor: pointer;
+    background-color:rgba(3, 114, 239, 0.927) ;
+    box-shadow: rgba(24, 66, 205, 0.933) 2px 2px 5px 3px;
 }

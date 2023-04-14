@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Compteur</title>
+    <link rel="stylesheet" href="F-Counter.css">
+    <link rel="shortcut icon" href="wallet-icon-png-5.png">
+</head>
+<body>
+    <header>
+        <h4 id="title"> Compteur </h4>
+        <nav>
+            <ul class="elem_toolbar">
+                <!-- <li><a href="#">services</a></li> -->
+                <li><a href="#"><img class="logo" src="SettingsIcon.png" alt="logo"></a></li>
+                <li><a href="#"><img class="logo" src="NotifWhite.png" alt="logo"></a></li>
+            </ul>
+        </nav>
+        
+        <a class="btn" href="Login.html"><button>Deconnexion</button></a>
+    </header>
+    <main>
+        <div class="counteur">
+            <form id="CounteurForm">
+                <div class="bouton">
+                    <input type="submit" formaction="F-Historic.html" id="BtnOC" value="Historique"> 
+                    <input type="submit" formaction="#" id="BtnReset" value="Réinitialiser"> 
+                </div>
+                <div id="compteur"> 
+                    <span id="quantity"> quantité </span>
+                </div>
+                <button id="retour" formaction="F-Counters.html"> retour  </button>
+            </form>
+        </div>
+    </main>
+
+    <script>
+
+        // récupère la quantité
+        var quantity = document.getElementById("quantity");
+        // lorsqu'on appuye sur le bouton réinitialiser
+        var resetBtn = document.getElementById("BtnReset");
+        // cela change la valeur de quantité
+        resetBtn.addEventListener("click", function() {
+            quantity.textContent = "0000";
+        });
+
+        // récupère la quantité
+        var quantity = document.getElementById("quantity");
+        // fonction qui récupère la dernière valeur de la quantité de la base de données et la met à jour dans la page
+        function updateQuantity() {
+        // attention il faut modifier cette methode en effetuant une requete pour récuperer la derniere valeur de compteur depuis la base de donnée
+        var lastQuantity = 10000; // supposons que la dernière quantité récupérée est de 10000
+        quantity.textContent = lastQuantity + " L";
+        }
+        // appelle la fonction updateQuantity toutes les 5 secondes et met le compteur à jour toutes les secondes
+        setInterval(updateQuantity, 1000);
+
+    </script>
+
+</body>
+</html>
