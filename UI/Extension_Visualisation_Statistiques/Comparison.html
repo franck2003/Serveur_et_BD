@@ -21,6 +21,47 @@
         <a class="btn" href="Login.html"><button>Deconnexion</button></a>
     </header>
     <main>
-        Tableau
+        <form>
+        <div>
+            <button id="btnGraphe" formaction="GrapheComparison.html"> Graphique </button>
+        	<table id="TabComparable"border=" 4" width="80%">
+          	    <thead id="tête">
+                    <tr>
+              	        <th>Comparateurs</th>
+              	        <th>Mon Habitation</th>
+                        <th>Habitation Type</th>              	        
+                    </tr>
+          	    </thead>
+
+          	    <tbody id="corp">
+                    <tr> <!-- 1ere ligne -->
+              	        <td> <span> Consommation </span> </td> 
+              	        <td> <span> Ma consommation </span> </td> 
+                        <td> <span> Consommation Type </span> </td>
+                    </tr>
+                    <tr>
+                        <td> <span> Maximum </span> </td> 
+              	        <td> <span> Mon Maximum </span> </td> 
+                        <td> <span> MaximumType </span> </td>
+                    </tr>            	        
+                    </tr>
+                    <tr>
+                        <td> <span> Minimum </span> </td> 
+              	        <td> <span> Mon Minimum </span> </td> 
+                        <td> <span> MinimumType </span> </td>             	        
+                    </tr>
+                    <tr>
+                        <td> <span> Moyenne </span> </td> 
+              	        <td> <span> Ma Moyenne </span> </td> 
+                        <td> <span> MoyenneType </span> </td>
+                    </tr>
+
+
+          	    </tbody>
+        	</table>
+
+            <button id="retour" formaction="HomeComparison.html"> retour </button>
+      	</div>
+        </form>
     </main>
 </body>

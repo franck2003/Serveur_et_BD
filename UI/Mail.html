@@ -4,12 +4,14 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title> Tendances Temporelles </title>
-    <link rel="stylesheet" href="TimeTrends.css">
+    <title>Mail</title>
+    <link rel="stylesheet" href="Mail.css">
+    <link rel="shortcut icon" href="wallet-icon-png-5.png">
+
 </head>
 <body>
     <header>
-        <h4 id="title"> Tendances Temporelles </h4>
+        <h4 id="title"> Mail </h4>
         <nav>
             <ul class="elem_toolbar">
                 <!-- <li><a href="#">services</a></li> -->
@@ -20,14 +22,19 @@
         
         <a class="btn" href="Login.html"><button>Deconnexion</button></a>
     </header>
+
     <main>
-        <form id="FormOpt">
-            <div class="boutonOpt">
-                <input type="submit" formaction="#" id="BtnOpt" value="Tendances Périodiques"> 
-                <input type="submit" formaction="#" id="BtnOpt" value="Tendances Saisonières"> 
-            </div>
-        </form> 
-        <form><button id="retour" formaction="ShowStatistics.html"> retour </button></form>   
+        <form>
+            <div class="mail">
+            <div class="from"> <input id="from"type="text" placeholder="de "> </div>
+            <div class="to"> <input id="to"type="text" placeholder="à ">  </div>
+            <div class="text"> <textarea cols="131"rows="30"placeholder="Ecrivez votre message"></textarea></div>
+        </div>
+        <form><button id="envoyer" formaction="#"> envoyer </button></form>   
+        <form><button id="retour" formaction="Home.html"> retour </button></form>   
     </main>
+
+    
+    
 </body>
 </html>

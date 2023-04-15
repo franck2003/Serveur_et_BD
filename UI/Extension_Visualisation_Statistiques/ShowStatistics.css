@@ -90,16 +90,13 @@ button:hover{
 /* ---------------------------------------- Page ShowStatistics.html -------------------------------- */
 
 #formOpt{
-    display: grid;
-   
+    display: grid;   
 }
 
 .boutonOpt{
     display: grid;
     width: 0%;
-    /* margin-left: 600px; */
-    /* margin-right: 600px;     */
-    margin-left: 42.5% ;
+    margin-left: 41% ;
 }
 
 #BtnOpt{
@@ -118,6 +115,24 @@ button:hover{
 
 #BtnOpt:hover{
     cursor: pointer;
+    background-color: rgb(8, 168, 8);
+    box-shadow: rgba(22, 132, 29, 0.933) 2px 2px 5px 3px;
+}
+
+#retour{
+    padding:9px 25px;
+    border: solid 2px green;
+    border-radius: 50px;
+    cursor: pointer;
+    transition: all 0.3s ease 0s;
+    background-color: green;
+    width: 10%;   
+    display: block;
+    position: absolute;
+    top: 95%;
+}
+
+#retour:hover{
     background-color: rgb(8, 168, 8);
     box-shadow: rgba(22, 132, 29, 0.933) 2px 2px 5px 3px;
 }

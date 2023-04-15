@@ -21,7 +21,16 @@
         <a class="btn" href="Login.html"><button>Deconnexion</button></a>
     </header>
     <main>
-        selection des dates
+        <div class="dates">
+            <form id="formDates">
+                <h1 id="#">Date de début</h1>
+                <input id="selectDate" type="date" min="0" placeholder="Date">
+                <h1 id="#">Date de fin</h1>
+                <input id="selectDate" type="date" min="0" placeholder="Date">
+            </form>
+            <form><button type="submit" formaction="StatisticsData.html" id="BtnConf" value="Confirmer"> confirmer</button> </form>
+        </div>
+        <form><button id="retour" formaction="ShowStatistics.html"> retour </button></form>
     </main>
 </body>
 </html>

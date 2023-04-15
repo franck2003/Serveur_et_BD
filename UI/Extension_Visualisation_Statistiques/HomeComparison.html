@@ -21,45 +21,28 @@
         <a class="btn" href="Login.html"><button>Deconnexion</button></a>
     </header>
     <main>
-        <form>
+        <form id="compareForm">
             <div class="Comparatifs" id="Comparatifs">
-            <div class="Compareurs">
                 <h2 id="txt">Comparer votre habitation</h2>
+            <div class="Compareurs">
+                <label for="nbrHab"> Nombre d'habitants </label>
+                <input id="nbrHab"type="number" min="1" placeholder="Nombre d'habiatnts"/>
                 
-                <div class="BtnOption">
-                    <div class="fournisseur">
-                                 
-                      
-                      <input id="elec" type="number" min="0" placeholder="Nombre d'habitants"/>
-                    </div>
-
-                    <div class="fournisseur">
-                                 
-                        <select id="elec">
-                          <!-- <option value="none" selected>Aucun</option> -->
-                          <option value="Luminus">Luminus</option>
-                          <option value="Electrabel">Electrabel</option>
-                        </select>
-                    </div>
-
-                    <input id="elec" type="number" step="10" min="0" max="30" placeholder="Taille d'habitation"/>
-
-                    <div class="fournisseur">
-                                 
-                        <select id="elec">
-                          <option value="none" selected>Aucun</option>
-                          <option value="Luminus">Luminus</option>
-                          <option value="Electrabel">Electrabel</option>
-                        </select>
-                    </div>
-                </div>
-
-
+                <label for="typeHab"> Type d'habitation </label>
+                <select id="type">
+                    <option value="" disabled selected hidden>Type d'habitation</option>
+                    <option value="homme">Villa</option>
+                    <option value="femme">Citadine</option>
+                </select>
+            
+                <label for="typeHab"> Taille d'habitation en m² </label>
+                <input id="nbrHab"type="number" min="5" placeholder="Taille de l'habitation"/>
+                <br><br>
+                <button formaction="Comparison.html"> Confirmer </button>
             </div>
             </div>
         </form>
+        <form><button id="retour" formaction="ShowStatistics.html"> retour </button></form>
     </main>
 </body>
 
-
-A RECOMMENCER A RECOMMENCER A RECOMMENCER  A RECOMMENCER A RECOMMENCER A RECOMMENCER A RECOMMENCER  A RECOMMENCER

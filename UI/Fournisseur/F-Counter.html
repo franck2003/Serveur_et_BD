@@ -38,14 +38,7 @@
 
     <script>
 
-        // récupère la quantité
-        var quantity = document.getElementById("quantity");
-        // lorsqu'on appuye sur le bouton réinitialiser
-        var resetBtn = document.getElementById("BtnReset");
-        // cela change la valeur de quantité
-        resetBtn.addEventListener("click", function() {
-            quantity.textContent = "0000";
-        });
+        
 
         // récupère la quantité
         var quantity = document.getElementById("quantity");
@@ -54,10 +47,22 @@
         // attention il faut modifier cette methode en effetuant une requete pour récuperer la derniere valeur de compteur depuis la base de donnée
         var lastQuantity = 10000; // supposons que la dernière quantité récupérée est de 10000
         quantity.textContent = lastQuantity + " L";
+        // Stocke la valeur de la quantité dans le stockage local du navigateur
+          localStorage.setItem("quantityValue", lastQuantity);
+
         }
         // appelle la fonction updateQuantity toutes les 5 secondes et met le compteur à jour toutes les secondes
         setInterval(updateQuantity, 1000);
 
+         // récupère la quantité
+         var quantity = document.getElementById("quantity");
+        // lorsqu'on appuye sur le bouton réinitialiser
+        var resetBtn = document.getElementById("BtnReset");
+        // cela change la valeur de quantité
+        resetBtn.addEventListener("click", function() {
+            quantity.textContent = "0000";
+            localStorage.setItem("quantityValue", 0); // Vous pouvez définir une valeur différente selon votre besoin
+    });
     </script>
 
 </body>
