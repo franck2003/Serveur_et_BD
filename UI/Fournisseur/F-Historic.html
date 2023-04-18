@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Historique</title>
+    <link rel="stylesheet" href="F-Historic.css">
+    <link rel="shortcut icon" href="wallet-icon-png-5.png">
+</head>
+<body>
+    <header>
+        <h4 id="title"> Historique </h4>
+        <nav>
+            <ul class="elem_toolbar">
+                <!-- <li><a href="#">services</a></li> -->
+                <li><a href="#"><img class="logo" src="SettingsIcon.png" alt="logo"></a></li>
+                <li><a href="#"><img class="logo" src="NotifWhite.png" alt="logo"></a></li>
+            </ul>
+        </nav>
+        
+        <a class="btn" href="Login.html"><button>Deconnexion</button></a>
+    </header>
+    <main>
+        <div>
+            <form>
+                <button id="supprimerButton" onclick="openPopup(event)"> Supprimer Historique  </button>
+              </form>
+        	<table id="TabConso"border=" 3" width="80%">
+          	    <thead id="tête">
+                    <tr>
+              	        <th>Date</th>
+              	        <th>Consommation</th>              	        
+                    </tr>
+          	    </thead>
+
+          	    <tbody id="corp">
+                    <tr> 
+              	        <td> <span> date </span> </td> 
+              	        <td> <button id="conso"> <span> consommation </span> </button> 
+                    </tr>
+                    <tr>
+                        <td> <span> date </span> </td>
+              	        <td> <button id="conso"> <span> consommation </span> </button> </td>              	        
+                    </tr>
+                    <tr>
+                        <td> <span> date </span> </td>
+              	        <td> <button id="conso"> <span> consommation </span> </button> </td>              	        
+                    </tr>
+          	    </tbody>
+        	</table>
+      	</div>
+        <form>
+          <button id="retour" formaction="F-Counter.html"> retour  </button>
+        </form>
+
+        
+         <!-- Creation de la pop-up -->
+         <form></form>
+         <div class="pop-up" id="pop-up">
+            <h2>Voulez-vous vraiment supprimer l'historique de consommation</h2>
+            <div class="bouton">
+            <button type="button" id="bttn" onclick="closePopup()"> Valider </button>
+            <!-- bouton permettant de fermer la pop-up -->
+            <button type="button" id="bttn"onclick="closePopup()"> Annuler </button> 
+            </div>
+        </div>
+        </form>
+    </main>
+
+
+    <!-- Interraction de la pop-up avec le bouton supprimer -->
+
+    <script>
+
+        let popup = document.getElementById("pop-up");
+        
+        // methode permettant d'ouvrir la pop-up lier au bouton supprimer 
+        function openPopup(event){
+            event.preventDefault(); 
+            popup.classList.add("open-popup");
+        }
+        
+        // methode permettant de fermer la pop-up lier au bouton annuler 
+        function closePopup(){
+            popup.classList.remove("open-popup");
+        }
+        
+        let validateBtn = document.getElementById("bttn");
+        
+        // lorsque l'on supprime le portefeuille, on ne doit plus avoir accès aux option de gestion d'un portefeuille
+        validateBtn.addEventListener("click", function() {
+            let TabConso = document.getElementById("TabConso");
+            TabConso.parentNode.remove();
+
+        
+            let body = document.querySelector(".toRemove");
+            body.innerHTML = "<h1>Aucun consomation</h1>";
+            body.style.textAlign = "center";
+        });
+        
+    </script>
+
+</body>
+</html>

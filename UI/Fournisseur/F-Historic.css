@@ -1,0 +1,213 @@
+
+body{
+    box-sizing: border-box;
+    margin-left:1.2%;
+    padding: 0;
+    width: 96%;
+    /* background-color: #24252A; */
+    background:url(./poigné.png) center/cover ;
+    
+}
+
+
+li, a, button{
+    font-family: Arial, Helvetica, sans-serif;
+    font-weight: 500;
+    font-size: 16px;
+    color: #edf0f1;
+    text-decoration: none;
+}
+
+header{
+    display: flex;
+    /* justify-content: space-between; */
+    justify-content:right;
+    align-items: center;
+    padding:30px 2.5%;
+    border: 2px solid rgba(19, 54, 193, 0.901);
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+    width: 97%;
+    margin: 0% auto;
+    max-height: 10px;
+    /* transform: translateY(10%); */
+    background: rgb(36, 106, 236);
+    box-shadow: rgba(0, 93, 254, 0.933) 3px 3px 14px 6px;
+}
+
+main{
+    background-color: rgba(13, 0, 255, 0.785) ;
+    padding:30px 5%;
+    border: 2px solid rgba(19, 54, 193, 0.901);
+    border-bottom-left-radius: 10px;
+    border-bottom-right-radius: 10px;
+    min-height: 700px;
+    color: azure;
+    width: 92%;
+    margin: 0% auto;
+    border-top: none;
+    box-shadow: rgba(0, 93, 254, 0.933) 3px 3px 14px 6px;
+}
+
+#title{
+    color: white;
+    font-size: x-large;
+    margin-right: auto;
+}
+
+.elem_toolbar{
+    /* border: 2px solid red; */
+    list-style: none;
+}
+
+.elem_toolbar li{
+    display:inline-block;
+    padding: 0px 10px;
+}
+
+.elem_toolbar li img{
+    transition: all 0.3s ease 0s;
+    /* border: solid 2px blue; */
+    height: 30px;
+    margin-top: 5px;
+}
+
+button{
+    padding:9px 25px;
+    border: 2px solid rgb(8, 9, 79);
+    border-radius: 50px;
+    cursor: pointer;
+    transition: all 0.3s ease 0s;
+    background-color: rgba(19, 73, 237, 0.927);
+    width: 100%;
+    
+}
+
+button:hover{
+    background-color:rgba(3, 114, 239, 0.927) ;
+    box-shadow: rgba(24, 66, 205, 0.933) 2px 2px 5px 3px;
+}
+
+
+#TabConso{
+    margin: auto auto;
+    background-color:rgb(9, 12, 173);
+    border-radius: 10px;
+    border:rgba(3, 114, 239, 0.927) ;
+}
+
+th{
+    height: 40px;
+    font-size: larger;
+    border: 7px solid rgba(3, 114, 239, 0.927) ;
+    border-radius: 10px;
+}
+
+td{
+    border: 2px solid rgba(3, 114, 239, 0.927) ;
+    border-radius: 5px;
+    text-align: center;
+    height: 80px;
+}
+
+#conso{
+    height: 100px;
+    border-radius: 5px;
+}
+
+#retour{
+    padding:9px 25px;
+    border: 2px solid rgb(8, 9, 79);
+    border-radius: 50px;
+    cursor: pointer;
+    transition: all 0.3s ease 0s;
+    background-color: rgba(19, 73, 237, 0.927);
+    width: 10%;   
+    display: block;
+    position: absolute;
+    top: 100%;    
+}
+
+#retour:hover{
+    background-color:rgba(3, 114, 239, 0.927) ;
+    box-shadow: rgba(24, 66, 205, 0.933) 2px 2px 5px 3px;
+}
+
+#supprimerButton{
+    padding:9px 25px;
+    border: 2px solid rgb(8, 9, 79);
+    border-radius: 50px;
+    cursor: pointer;
+    transition: all 0.3s ease 0s;
+    background-color: rgba(19, 73, 237, 0.927);
+    width: 10%; 
+    position: absolute;
+    top: 15%;
+    right: 3%;
+}
+
+
+#supprimerButton:hover{
+    background-color:rgba(3, 114, 239, 0.927) ;
+    box-shadow: rgba(24, 66, 205, 0.933) 2px 2px 5px 3px;
+}
+
+
+
+
+
+.pop-up{
+    width: 400px;
+    background-color: rgba(19, 73, 237, 0.927);
+    border-radius: 6px;
+    border: 2px solid rgb(8, 9, 79);
+    position: absolute;
+    top: 0;
+    left: 50%;
+    transform: translate(-50%, -50%) scale(0.1);
+    text-align: center;
+    padding: 0 30px, 30px;
+    color:white;
+    visibility: hidden;
+    transition: transform 0.4s, top 0.4s;
+}
+
+.open-popup{
+    visibility: visible;
+    top: 50%;
+    transform: translate(-50%, -50%) scale(1);
+}
+
+h1{
+    color: black;
+    font-size: larger;
+}
+
+.pop-up h2{
+    font-size: 30px;
+    font-weight: 500;
+    margin: 30px 0 10px;
+
+}
+
+.pop-up button{
+    width: 100%;
+    margin-top: 50px;
+    padding: 10px ;
+    margin: 10px;
+    background-color: rgba(43, 91, 235, 0.77);
+    color:white;
+    outline: none;
+    border: 0;
+    font-size: 18px;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+.pop-up button:hover{
+    background-color: rgba(5, 27, 222, 0.844);
+}
+
+.bouton{
+    display: flex;
+}
